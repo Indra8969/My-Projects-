@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>googlefont</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body>
+
+  <div class="navbar">
+   
+    <div class="navfirst">
+    
+       <div class="logo"><img src="/photos/download (1).png" alt="/photos/download (1).png"></div>
+   
+  
+       <div class="search">
+        <span class="material-symbols-outlined">
+        search</span>
+        <input type="text" placeholder="Search Fonts">
+       </div>
+   
+   
+   
+       <div class="dark"><span class="material-symbols-outlined">
+        dark_mode
+        </span></div>
+
+
+
+       <div class="shopping">
+        <span class="material-symbols-outlined">
+        shopping_bag
+        </span>
+       </div>
+    </div>
+     
+     
+     
+   <div class="navtwo">
+       
+     <div class="filter" >
+        <span class="material-symbols-outlined">
+       tune
+       </span>
+       <h3 >Filters</h3>
+       
+     </div>
+     <div class="btn" onclick="move()"><span class="material-symbols-outlined">
+chevron_right
+</span></div>
+   </div>
+    
+  </div>
+
+
+
+ <div id="filterop" >
+    <div id="movecancel" onclick="movecancel()">
+      <span class="material-symbols-outlined">
+        close
+      </span>
+    </div>
+    <h3>Preview</h3>
+    <textarea class="pre" type="text" placeholder="Preview"></textarea>
+    <select name="pixel" id="pixel">
+      <option value="8">8px</option>
+      <option value="10">10px</option>
+      <option value="12">12px</option>
+    </select>
+
+ </div>
+ 
+ 
+ 
+ 
+ <div class="bottom"></div>
+  
+ <script src="/script.js"></script>
+</body>
+
+</html>
