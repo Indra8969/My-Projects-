@@ -59,7 +59,7 @@ const getWeather = async (city) => {
       document.querySelector("#wind").innerHTML= "air"
       document.querySelector("#humidity").innerHTML= "humidity_percentage"
       document.querySelector(".wind-data").innerHTML= data.wind.speed + ` ${speedunit} </br><h6>wind speed</h6>`
-      document.querySelector(".humidity-data").innerHTML= data.main.humidity + " %" + `</br><h6>wind speed</h6>`
+      document.querySelector(".humidity-data").innerHTML= data.main.humidity + " %" + `</br><h6>humidity</h6>`
     
      if(month<10){
        if (date<10) {
