@@ -116,7 +116,7 @@ input{
   width: 175px;
   color: rgb(70,70,70);
   text-transform: capitalize;
-  margin: 8px;
+  margin: 7.5px 0px;
 }
 .mainhead{
   transform: translateX(-100px);
