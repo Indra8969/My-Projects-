@@ -35,7 +35,7 @@ circle.addEventListener("click", ()=>{
   else{
    mainWindow.style.transform = "translateX(-100vw)" 
     circle.style.transform = "translateY(200px)"
-    addbtn.style.transform = "rotate(deg)"
+    addbtn.style.transform = "rotate(135deg)"
     x = 0
     
   }
@@ -52,7 +52,7 @@ priority.addEventListener("click",()=>{
 
      mainWindow.style.transform = "translateX(-100vw)" 
     circle.style.transform = "translateY(200px)"
-    addbtn.innerHTML = "add"
+    addbtn.transform = "rotate(135deg)"
     x = 0
 })
 console.log(inputData)
