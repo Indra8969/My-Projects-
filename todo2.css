@@ -221,7 +221,7 @@ input{
   padding: 15px 0px;
   overflow-y: scroll;
   background-color: rgba(0,0,0,0);
-  background-image: url(/back.jpg);
+  background-image: url(/back.webp);
   background-size: cover;
   background-blend-mode: lighten;
   border-radius: 10px;
