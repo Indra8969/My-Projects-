@@ -14,11 +14,43 @@ var cleartaskin = document.querySelector(".cleartaskin")
 var head2 = document.querySelector(".head2")
 var yes = document.querySelector(".yes")
 var clr2 = document.querySelector(".clr2")
- 
+var alltasks = [];
+
+//creating tasks using the localstorqge data
+var  lclstr = JSON.parse(localStorage.getItem("data")) ||[]
+for (let z = 0; z < lclstr.length; z++) {
+  crt(z)
+  
+}
+function crt(z){
+  var elem = document.createElement("div")
+         var elem2 = document.createElement("div")
+         var elem3 = document.createElement("h5")
+         var elem4 = document.createElement("span")
+         
+         elem.setAttribute("class", "Task")
+         elem2.setAttribute("class", "tick")
+         elem3.setAttribute("class", "taskData")
+         elem4.setAttribute("id", "delete")
+         elem4.setAttribute("class", "material-symbols-outlined")
+         elem4.innerHTML = "delete"
+        
+        
+        MyTasks.appendChild(elem) 
+        elem.appendChild(elem2)
+        var task = document.querySelectorAll(".Task")
+        var arerer = Array.from(task)
+        
+        arerer[arerer.length-1].appendChild(elem2)
+        
+        elem3.innerHTML = lclstr[z]
+        arerer[arerer.length-1].appendChild(elem3)
+        arerer[arerer.length-1].appendChild(elem4)
+}
 
 // set interval
 setInterval(function() {
-  addcr.style.transform = "translateY(200px)"
+  addcr.style.transform = "translateY(0px)"
   flowtingADD.style.transform = "translateY(0px)"
 }, 10000);
 
@@ -29,8 +61,8 @@ addcr.addEventListener("click", ()=>{
      flowtingADD.style.opacity=1;
   // giving transition to the add bar window
      if (x ==0) {
-       addcr.style.transform = "translateY(200px)"
-       flowtingADD.style.transform = "translateY(65px)"
+       addcr.style.transform = "translateY()"
+       flowtingADD.style.transform = "translateY()"
        flowtingADD.style.opacity = 0;
        addbtn.style.transform = "rotate(45deg)"
        mainWindow.style.transform = "translateX(0vw)"
@@ -38,7 +70,7 @@ addcr.addEventListener("click", ()=>{
        x = 1
      }
      else{
-       addcr.style.transform = "translateY(200px)"
+       addcr.style.transform = "translateY()"
        flowtingADD.style.transform = "translateY(0px)"
        flowtingADD.style.opacity = 1;
        addbtn.style.transform = "rotate(-90deg)"
@@ -62,7 +94,7 @@ inputElement.setAttribute("placeholder", "Task...")
 //add tasks to the main container by using button name priority 
 priority.addEventListener("click", ()=>{
      //animation 
-     addcr.style.transform = "translateY(200px)"
+     addcr.style.transform = "translateY(px)"
        flowtingADD.style.transform = "translateY(0px)"
        flowtingADD.style.opacity = 1;
        addbtn.style.transform = "rotate(-90deg)"
@@ -77,6 +109,12 @@ priority.addEventListener("click", ()=>{
          Data.push(val.value)
          
        })
+      //STORING DATA TO THE LOCAL STORAGE
+       var olddata = JSON.parse(localStorage.getItem("data")) ||[]
+       olddata.push(...Data)
+       var str = JSON.stringify(olddata)
+       localStorage.setItem("data", str)
+       console.log(str)
        
        //creating html elements for tasks using Data
          i = 0
@@ -105,26 +143,25 @@ priority.addEventListener("click", ()=>{
         arerer[arerer.length-1].appendChild(elem3)
         arerer[arerer.length-1].appendChild(elem4)
         
-
-        
-        
-
+       
        }
        
        for (let i = 0; i < Data.length; i++) {
          create()
        }
+         
 })
 
 var c = true
 cleartasks.addEventListener("click",()=>{
+ 
   if (c == true) {
-    cleartaskin.style.height = "120px"
-    cleartaskin.style.width = "200px"
+    cleartaskin.style.height = "25vw"
+    cleartaskin.style.width = "35vw"
     cleartaskin.style.display = "flex"
     cleartaskin.style.top = "0px"
     cleartaskin.style.right = "0px"
-    cleartaskin.style.padding = "15px"
+    cleartaskin.style.padding = "0vw"
     c = false
       
     setTimeout(function() {
@@ -149,16 +186,11 @@ cleartasks.addEventListener("click",()=>{
 
         // empty the mystask div on cliking to the yes btn
 yes.addEventListener("click",()=>{
+  localStorage.clear("data")
+  alltasks= []
   MyTasks.innerHTML = ""
 } )
 
       
-      
-      var ART = Array.from(ticks)
-      ART.forEach((tick)=>{
-          tick.addEventListener("click", ()=>{
-          c
-          tick.parentElement.remove()
-  })
-})
 
+      
