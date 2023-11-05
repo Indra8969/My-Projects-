@@ -3,6 +3,7 @@ var flowtingADD = document.querySelector(".fwindow")
 var x = 0
 var addbtn = document.querySelector("#addbtn")
 var mainWindow = document.querySelector(".window-main")
+var windowadd = document.querySelector(".window-add")
 var inputdiv = document.querySelector(".inputdiv")
 var inputadd = document.querySelector("#createinput")
 var priority = document.querySelector("#priority")
@@ -14,7 +15,59 @@ var cleartaskin = document.querySelector(".cleartaskin")
 var head2 = document.querySelector(".head2")
 var yes = document.querySelector(".yes")
 var clr2 = document.querySelector(".clr2")
-var alltasks = [];
+var state = "zero"
+
+//GIVING STYLE ON COMPLETED TASKS
+var tasks = []
+var L = 0
+setInterval(function() {
+  var crlen = tasks.length
+  var newtasks = document.querySelectorAll(".Task")
+  var newlen = newtasks.length
+  if (crlen == newlen) {
+      
+    tasks.forEach((task)=>{
+      task.addEventListener("click",()=>{
+        var taskdata = task.querySelector("h5") 
+        var tick = task.querySelector("div") 
+         task.style.backgroundColor = "rgba(200,200,225,1)"
+         taskdata.style.color = "block"
+         taskdata.style.textDecoration = "line-through"
+         tick.innerHTML= `<span class="material-symbols-outlined">task_alt</span>`
+         tick.style.border = "0px"
+         tick.style.backgroundColor = "transparent"
+         task.setAttribute("id", "completed")
+         
+           
+      
+      } )
+    })
+    
+  }
+  else{
+    L = 0
+    L = crlen
+    tasks.push(newtasks[L++])
+    
+    
+  }
+  
+}, 100);
+
+
+//REMOVE PARENT ON CLIKING TO THE DELETE BUTTON 
+setInterval(function() {
+  var deletebtns = document.querySelectorAll("#delete")
+  deletebtns.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+      
+      btn.parentElement.remove()
+  
+      
+    })
+  })
+  
+}, 1000);
 
 //creating tasks using the localstorqge data
 var  lclstr = JSON.parse(localStorage.getItem("data")) ||[]
@@ -48,11 +101,11 @@ function crt(z){
         arerer[arerer.length-1].appendChild(elem4)
 }
 
-// set interval
-setInterval(function() {
-  addcr.style.transform = "translateY(0px)"
-  flowtingADD.style.transform = "translateY(0px)"
-}, 10000);
+//set interval
+// setInterval(function() {
+//   addcr.style.transform = "translateY(0px)"
+//   flowtingADD.style.transform = "translateY(0px)"
+// }, 10000);
 
 
 
@@ -78,7 +131,19 @@ addcr.addEventListener("click", ()=>{
        x = 0
        
      }
-  
+})
+windowadd.addEventListener("click", (event)=>{
+  event.stopPropagation()
+})
+mainWindow.addEventListener("click", function (event) {
+  if(event.target !== addcr && event.target !==windowadd ){
+       addcr.style.transform = "translateY()"
+       flowtingADD.style.transform = "translateY(0px)"
+       flowtingADD.style.opacity = 1;
+       addbtn.style.transform = "rotate(-90deg)"
+       mainWindow.style.transform = "translateX(-100vw)"
+       x = 0
+  }
 })
 
 
@@ -114,7 +179,7 @@ priority.addEventListener("click", ()=>{
        olddata.push(...Data)
        var str = JSON.stringify(olddata)
        localStorage.setItem("data", str)
-       console.log(str)
+       
        
        //creating html elements for tasks using Data
          i = 0
@@ -144,12 +209,12 @@ priority.addEventListener("click", ()=>{
         arerer[arerer.length-1].appendChild(elem4)
         
        
-       }
+      }
        
        for (let i = 0; i < Data.length; i++) {
          create()
        }
-         
+      
 })
 
 var c = true
@@ -187,10 +252,28 @@ cleartasks.addEventListener("click",()=>{
         // empty the mystask div on cliking to the yes btn
 yes.addEventListener("click",()=>{
   localStorage.clear("data")
-  alltasks= []
-  MyTasks.innerHTML = ""
+  setInterval(function() {
+  location.reload()
+  }, 400);
+    
 } )
 
-      
 
-      
+
+setInterval(function() {
+  var completed = document.querySelectorAll("#completed")
+  completed.forEach((cmpt)=>{
+    cmpt.addEventListener("click",()=>{
+      var taskdatac = cmpt.querySelector("h5") 
+      var tickc = cmpt.querySelector("div") 
+         cmpt.style.backgroundColor = "rgba(200,200,245,1)"
+         taskdatac.style.color = "black"
+         taskdatac.style.textDecoration = "none"
+         tickc.innerHTML= `<span class="material-symbols-outlined"></span>`
+         tickc.style.border = "1px dotted black"
+         tickc.style.backgroundColor = "white"
+         cmpt.setAttribute("id", "")
+         
+    } )
+  })
+}, 100);
