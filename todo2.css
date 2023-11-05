@@ -102,9 +102,6 @@ html{
 .fade{
   margin-bottom: 5px;
 }
-h1, .mainh5{
-  transform: translateX();
-}
 #addbtn{
   font-size: 7vw;
   color: white;
