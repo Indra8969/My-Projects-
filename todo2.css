@@ -14,7 +14,7 @@ html{
 }
 .main{
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   background-color: ;
   padding: 1vw;
   display: flex;
@@ -46,7 +46,7 @@ html{
   justify-content: center;
   align-items: center;
   box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
-  z-index: 2;
+  z-index: 7;
   transition: all 0.5s ease-in-out;
   color: white;
 }
@@ -103,7 +103,7 @@ html{
   margin-bottom: 5px;
 }
 h1, .mainh5{
-  transform: translateX(-25%);
+  transform: translateX();
 }
 #addbtn{
   font-size: 7vw;
@@ -141,8 +141,7 @@ h1, .mainh5{
   align-items: center;
   position: fixed;
   top: 0px;
-  z-index: 1;
-  scale: 1;
+  z-index: 7;
   transform: translateX(-100vw);
   transition: all 0.75s ease;
 }
@@ -163,6 +162,7 @@ h1, .mainh5{
   justify-content: center;
   align-items: center;
   border-radius: 2vw;
+  transition: all 0.3s ease;
 }
 .indra{
   width: 7vw;
@@ -191,7 +191,7 @@ input{
   border-radius: 2.5vw;
 }
 .Task{
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(200,200,245,0.9);
   min-width: 80%;
   min-height: ;
   display: flex;
@@ -210,15 +210,23 @@ input{
   margin: 10px;
   background-color: ;
   color: black;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 .tick{
-  width: 5vw;
-  height: 5vw;
-  border: 1px dotted black;
+  width: 1vw;
+  height: 1vw;
+  border: 0px solid black;
   border-radius: 50%;
   margin: 5px;
   background-color: white;
   background-color:;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tick span{
+  
 }
 #delete{
   font-size: 5vw;
@@ -229,7 +237,7 @@ input{
   width: 80vw;
   padding: 15px auto;
   overflow-y: scroll;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.35);
   background-image: url(/back.jpg);
   background-size: cover;
   background-blend-mode: none;
@@ -250,13 +258,15 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3vw;
-  margin-left: 100px;
+  font-size: 4vw;
+  font-weight: 300;
+  margin-left: 0px;
   border: 1px solid grey;
   border-radius: 6.5vw;
   background-color: rgba(0,0,0,0.25);
   transition: all 0.25s ease-in-out;
   position: relative;
+  z-index: 4;
 }
 /* .clearwindow{
   position: fixed;
@@ -272,9 +282,10 @@ input{
   height: 0vw;
   display: flex;
   justify-content: center;
+  font-size: 3vw;
   align-items: center;
   flex-direction: column;
-  margin-left: 100px;
+  margin-left: 0px;
   border-radius: 5vw;
   background-color: rgba(225,225,225,0.9);
   box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
@@ -282,9 +293,10 @@ input{
   position: absolute;
   top: 50%;
   right: 50%;
-  backdrop-filter: blur(0vw);
+  backdrop-filter: blur(1vw);
   color: black;
   overflow: hidden;
+  z-index: 4;
 }
 .clr2{
   display: none;
@@ -312,4 +324,29 @@ input{
   background-color: seagreen;
   color: white;
   
+}
+.savechanges{
+  width: 15vw;
+  height: 10vw;
+  border: 1px solid black;
+  font-weight: 600;
+  border-radius: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(200,200,245,0.35);
+  transition: all 0.3s ease;
+}
+.mainhead{
+  width: 70vw;
+  font-size: 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5vmin 0vmin;
+}
+.note{
+  position: fixed;
+  top: 90vh;
+  margin: 10px 0px;
 }
