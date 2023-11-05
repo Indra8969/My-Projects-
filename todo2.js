@@ -285,7 +285,7 @@ cleartasks.addEventListener("click",()=>{
 } )
 
 
-        // empty the mystask div on cliking to the yes btn
+// empty the mystask div on cliking to the yes btn
 yes.addEventListener("click",()=>{
   localStorage.clear("data")
   setTimeout(function() {
