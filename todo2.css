@@ -1,0 +1,327 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Josefin Sans";
+    user-select: none;
+    scroll-behavior: ;
+  }
+  @font-face {
+    font-family: "l";
+    src: url(linotteR.ttf);
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  @font-face{
+    font-family: LN;
+    src: url(DMSans-Regular.ttf);
+  }
+  .main{
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h3{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 2.5px;
+    margin-bottom: 20px;
+  }
+  .container{
+    width: min(90%, 800px);
+    height: 80vh;
+    max-height: 900px;
+    background-image: linear-gradient(-45deg , navy, purple);
+    margin-top: 1vmin;
+    border-radius: 15px;
+    padding-bottom: 5vmin;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+  .container::-webkit-scrollbar{
+     width: 0px;
+  }
+  
+  .cdd{
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: "l";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+    z-index: 7;
+    transition: all 0.1s ease-in-out;
+    color: black;
+    margin: 20px 0px;
+  }
+  
+  
+  .fwindow{
+    background-color: white;
+    font-size: 16px;
+    width: 35vmin;
+    height: 15vmin;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4vw;
+    clip-path: polygon(100% 0, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%, 0 0) ;
+    animation-name: scale,fadeaway;
+    animation-duration: 1s, 5s;
+    animation-iteration-count: infinite , 1;
+    transform: translateY(0px);
+    transition: all 0.5s ease-in-out;
+    color: black;
+    opacity: 1;
+  }
+  @keyframes scale{
+    0%{
+      scale: 1.05;
+    }
+    50%{
+      scale: 0.95;
+    }
+    100%{
+      scale: 1.05;
+    }
+  }
+  @keyframes fadeaway{
+    0%{
+      opacity: 0;
+    }
+    15%{
+      opacity: 1;
+    }
+    85%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  .fade{
+    margin-bottom: 5px;
+  }
+  h1, .mainh5{
+    font-size: 1rem;
+  }
+  #addbtn{
+    font-size: 20px;
+    color: black;
+    transition: all 1s ease-in-out;
+    
+  }
+  
+  .window-add{
+    width: 300px;
+    background-image: linear-gradient(-45deg , navy, purple);
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
+    color: white;
+  }
+  .inputdiv{
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    overflow-y: scroll;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 30px;
+    padding: 25px 0px;
+    scrollbar-width: 0px;
+  }
+  .inputdiv::-webkit-scrollbar{
+    width: 0px;
+  }
+
+  .window-main{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 7;
+    transform: translateX(-100vw);
+    transition: all 0.75s ease;
+    backdrop-filter: blur(5px);
+  }
+  
+  .window-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vw 2vw;
+    margin-bottom: 30px;
+    margin-top: 2vw;
+  }
+  .zeal{
+    width: 25px;
+    height: 25px;
+    background-color: seagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+  }
+  .indra{
+    width: 25px;
+    height: 25px;
+    background-color: seagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+  }
+  .window-head h4{
+    font-size: 20px;
+  }
+  input{
+    width: 200px;
+    min-height: 40px;
+    margin: 1.5px 0vw;
+    outline: 0px;
+    padding: 0px 10px;
+    font-family: "LN";
+    border: 1px solid rgba(0,0,0,0.1);
+    font-weight: 600;
+    color: grey;
+    font-size: 12px;
+    color: rgb(80,80,80);
+    border-radius: 5px;
+  }
+  .Task{
+    background-color: rgba(200,200,245,0.75);
+    width: 90%;
+    min-height: ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75vw 0.5vw;
+    border-radius: 5px;
+    margin: 10px auto;
+    font-size: 3vmin;
+    transition: all 0.1s ease;
+  }
+  .taskData{
+    width: 100%;
+    min-width: 6vw;
+    color: black;
+    padding: 0.5vw 1vw;
+    margin: 10px;
+    background-color: ;
+    color: black;
+    transition: all 0.3s ease;
+    z-index: 1;
+    font-family: "LN";
+    font-size: 0.8rem;
+    font-family: "Poppins";
+    font-weight: 200;
+  }
+  .tick{
+    width: 10px;
+    aspect-ratio: 1/1;
+    border: 0px solid black;
+    border-radius: 50%;
+    margin: 0px 10px 0px 15px;
+    background-color: white;
+    background-color:;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #delete{
+    font-size: 20px;
+    color: black ;
+    margin: 5px 20px 5px 10px;
+  }
+  .MyTasks{
+    height: 90%;
+    width: 95%;
+    padding: ;
+    overflow-y: scroll;
+    background-color: rgba(255,255,255,0.35);
+    background-image: url(/back.jpg);
+    background-size: cover;
+    background-blend-mode: none;
+    border-radius: 10px;
+  }
+  .MyTasks::-webkit-scrollbar{
+    width: 0px;
+  }
+  .mytaskhead{
+    width: 90%;
+    margin: 15px 0px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .clearTask{
+    width: 20vmin;
+    height: 10vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 2vmin;
+    background-color: white;
+    transition: all 0.25s ease-in-out;
+  }
+  .savechanges{
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .mainhead{
+    width: 70vmin;
+    font-size: 3vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vmin 0vmin;
+    font-size: 0.8rem;
+  }
+  .note{
+   margin-bottom: 10px; 
+    color: white;
+  }
+  .bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+  }
+  
