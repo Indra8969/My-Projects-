@@ -51,6 +51,7 @@ const getWeather = async (city) => {
 
     if (response.ok) {
       const data = await response.json();
+      console.log(data);
       h1.innerHTML = Math.round(data.main.temp) + `${cel}`;
       h1.style.fontSize="40px"
       h2.innerHTML= input.value;
