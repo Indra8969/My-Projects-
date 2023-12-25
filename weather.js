@@ -73,7 +73,7 @@ const getWeather = async (city) => {
        else if(date<10 && month>10){
          time.innerHTML = `${"0" + date} / ${month + 1} / ${year}`
        }else{
-         time.innerHTML = `${date} / ${month} / ${year}/`
+         time.innerHTML = `${date} / ${month + 1} / ${year}`
        }
        }
        
