@@ -75,6 +75,7 @@ const getWeather = async (city) => {
        }else{
          time.innerHTML = `${date} / ${month} / ${year}/`
        }
+       }
        
      }
      
