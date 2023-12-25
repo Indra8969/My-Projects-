@@ -94,12 +94,17 @@ const getWeather = async (city) => {
   }
 };
 
-// Example usage:
- // Replace "London" with the city you want to get weather data for
+
 ser.addEventListener("click", ()=>{
   getWeather(input.value);
   
 } )
+ser.addEventListener("keydown", (e)=>{
+  if(e.key == "Enter"){
+    getWeather(input.value);
+    }
+})
+
 
 clear.addEventListener("click", ()=>{
   input.value= ""
