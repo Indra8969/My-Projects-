@@ -61,8 +61,9 @@ const getWeather = async (city) => {
       document.querySelector("#humidity").innerHTML= "humidity_percentage"
       document.querySelector(".wind-data").innerHTML= data.wind.speed + ` ${speedunit} </br><h6>wind speed</h6>`
       document.querySelector(".humidity-data").innerHTML= data.main.humidity + " %" + `</br><h6>humidity</h6>`
-    
-     if(month<10 && date<10 || month<10 || date<10){
+
+      var j = true
+     if(j == true){
        if (date<10 && month<10) {
         time.innerHTML= `${"0" + date} / ${"0" + month + 1} / ${year}`
        }
@@ -71,13 +72,15 @@ const getWeather = async (city) => {
        }
        else if(date<10 && month>10){
          time.innerHTML = `${"0" + date} / ${month + 1} / ${year}`
+       }else{
+         time.innerHTML = `${date} / ${month} / ${year}/`
+       }
+       
      }
      
-     else{
-       time.innerHTML= `${date} / ${month} / ${year}`
-     }
 
-    } else {
+
+     else {
       console.error("Failed to fetch data from the API");
       h1.innerHTML = "--°c"
       h1.style.fontSize="20px"
