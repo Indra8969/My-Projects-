@@ -105,7 +105,7 @@ ser.addEventListener("click", ()=>{
   getWeather(input.value);
   
 } )
-ser.addEventListener("keydown", (e)=>{
+ser.addEventListener("keyup", (e)=>{
   if(e.key == "Enter"){
     getWeather(input.value);
     }
