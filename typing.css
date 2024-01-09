@@ -4,16 +4,16 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "roboto";
+  font-family: "Roboto Mono";
   scroll-behavior: smooth;
 }
 body{
-  padding: 20px 40px;
+  padding: 20px 15px;
   font-weight: 400;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #181412cf;
+  background-color: #0f0f0fcf;
   color: white;
 }
 .test{
@@ -30,22 +30,15 @@ body{
   font-size: 16px;
   background-color: ;
   text-align: center;
+  transition: all 0.1s linear;
 }
-
-.clickToStart input{
-  width: 100%;
+input{
   outline: none;
-  border: 0px;
-  text-align: center;
-  background-color: transparent;
-  color: transparent;
-  user-select: ;
-  margin: 20px 0px;
-  opacity: 1;
-}
-.clickToStart input:focus{
   opacity: 0;
-  color: transparent;
+  position: fixed;
+  border: 2px solid black;
+  position: fixed;
+  transform: translate(-50%, 0);
 }
 
 .custom-para{
@@ -56,13 +49,6 @@ body{
   box-shadow: 20px 20px 30px rgba(0,0,0,0.1);
   text-align: center;
 }
-.custom-para input{
-  height: 35px;
-  width: 100%;
-  outline: none;
-  margin-top: 5px;
-  text-align: center;
-}
 .refresh {
   margin:50px;
 }
@@ -71,10 +57,17 @@ body{
   overflow:scroll;
   font-family: "Roboto Mono;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-.text span {
-  transition: all 0.3s ease;
-  font-size: 18px;
+.text h4{
+  text-align: left;
+}
+.character{
+  width: 100px;
+  transition: all 20 ease;
+  font-size: 25px;
 }
 .result {
   width: 100vw;
@@ -91,16 +84,34 @@ body{
 }
 .word{
   display:inline-block;
-  margin: 0px 3.5px;
+  margin: 0px 4.5px;
   color: grey;
-  font-size: 16px;
-  transition: all 0.05s linear;
+  transition: all 0.1s linear;
 }
 .borderLeft{
-  width:1px;
+  width: 1px;
   background-color: orange;
-  position: absolute;
-  height: 15px;
+  position: fixed;
   left: 0px;
-  transition: all 0.1s linear;
+  transition: all 0.15s linear;
+}
+h2{
+  font-family: ;
+}
+select{
+  background-color: transparent;
+  color: white;
+  outline: none;
+  width: 100px ;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: "Roboto Mono";
+}
+.time{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  padding: 20px 5px;
 }
