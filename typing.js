@@ -45,11 +45,21 @@ const paragraph = [
 
   "A dedicated gardener tends to a blooming garden, nurturing plants that embody the cycle of growth and renewal. The fragrance of blossoms fills the air, and the garden becomes a sanctuary where the ebb and flow of life is celebrated in the intricate dance of petals and leaves."]
 var CurrentPara = ""
+var ParaWords = ""
 var text = document.querySelector(".text");
 var border = document.querySelector(".borderLeft");
 var ref = document.querySelector(".refresh");
-var j = 0
-var k = 0
+var inputt = document.querySelector("input");
+var select = document.querySelector("select");
+var j = 0;
+var k = 0;
+var t = "";
+var typing = false;
+var startTime = "";
+var endTime = "";
+var T = false;
+
+
 
 
 insertText();
@@ -60,7 +70,7 @@ function insertText() {
   
   var wordLength = CurrentPara.split(" ").length
   
-  var ParaWords = CurrentPara.split(" ");
+  ParaWords = CurrentPara.split(" ");
   
   for (let i = 0; i < wordLength; i++) {
     var word = document.createElement("div");
@@ -72,77 +82,109 @@ function insertText() {
   
   
     
-    for (let i = 0; i < words.length; i++) {
-      var char = Array.from(ParaWords[i])
-    
+   for (let i = 0; i < words.length; i++) {
+      var char = Array.from(ParaWords[i]);
+      char.push(" ");
       char.forEach((ch)=>{
         var span = document.createElement("span");
+        span.setAttribute("class","character");
+        span.style.width = "30px";
+        span.style.fontSize = select.value + "px";
         span.innerHTML = ch;
         words[i].appendChild(span);
       })
-        
     }
-  
-      
     
   
 }
     
   
-
-
-document.addEventListener("input", (e)=>{
-   
-  var wordss = document.querySelectorAll(".word")
+inputt.addEventListener("input",(e)=>{
+  
+  var word = document.querySelectorAll(".word")
+  var span = word[j].childNodes;
+  var currentWord = Array.from(inputt.value);
+  
   if(e.data == " "){
     j++
     k = 0
+    inputt.value = ""
+    if(j > word.length-1){
+      j--
+    }
+  }else if(e.data == null){
+    span.forEach((spn)=>{
+      spn.style.color = "grey"
+    })
+    k--
+    for (let i = 0; i < currentWord.length; i++) {
+      
+      if(currentWord[i] == span[i].innerHTML){
+        span[i].style.color = "white"
+      }else{
+        span[i].style.color = "brown"
+       
+      }
+    }
+  }else{
+    k++
+    if(T == false){
+      startTime = new Date().getTime();
+      console.log(startTime)
+      T = true
+    }
+    for (let i = 0; i < currentWord.length; i++) {
+     
+      if(currentWord[i] == span[i].innerHTML){
+        span[i].style.color = "white"
+      }else{
+        span[i].style.color = "brown"
+       
+      }
+    }
   }
   
-  
-  var span = wordss[j].childNodes;
-  
-  if(span[k].innerHTML == e.data && e.data != " "){
-    span[k].style.color = "white"
-    k++
-  }else if(span[k].innerHTML != e.data && e.data != " "){
-    span[k].style.color = "brown"
-    k++
+  if(j == word.length-1 && k == span.length-1){
+    finished();
   }
   
-
-  
-
-})
+} )
 
 
 
 
 ref.addEventListener("click",()=>{
-  j = 0
-  k = 0
+  j = 0;
+  k = 0;
+  t = "";
+  typing = false;
+  startTime = "";
+  endTime = "";
+  T = false;
+  inputt.value = "";
+  text.innerHTML = "";
+  
   text.querySelectorAll(".word").forEach((each)=>{
     each.remove();
   })
   insertText();
- 
+  border.style.display = "inline-block"
 } )
 
 
-var select = document.querySelector("select")
-select.addEventListener("change",(e)=>{
-  console.log(select.value)
-  var span = document.querySelectorAll("span")
-  
-  function select() {
-  span.forEach((each)=>{
+
+
+function fontSize() {
+   var select = document.querySelector("select");
+   var span = document.querySelectorAll("span");
+   span.forEach((each)=>{
     each.style.fontSize = select.value + "px"
   })
-   
-  }
-  
-    
-    
+}
+fontSize();
+
+document.querySelector("select").addEventListener("change",()=>{
+  fontSize();
 } )
 
 
@@ -151,21 +193,68 @@ select.addEventListener("change",(e)=>{
 
 
 setInterval(function() {
-var words = document.querySelectorAll(".word");
-var span = words[j].childNodes
-var len = Array.from(words[j].innerHTML)
-if(k == len.length -1 ){
-  border.style.left = span[k].offsetLeft + span[k].clientWidth + "px"
-}else{
-  border.style.left = span[k].offsetLeft + "px"
-}
+  var words = document.querySelectorAll(".word");
+  var span = words[j].querySelectorAll(".character");
+   
   
+     
+     
+   border.style.left = span[k].getBoundingClientRect().x  + "px"
+   border.style.top = span[k].getBoundingClientRect().y + "px"
+   border.style.height = select.value + "px"
+   
+   inputt.style.left = span[k].getBoundingClientRect().x  + "px"
+   inputt.style.top = span[k].getBoundingClientRect().y + "px"
+   inputt.style.height = select.value + "px"
+
+}, 100);
+
+setInterval(function() {
+  if(!typing){
+  if(border.style.opacity == 1){
+    border.style.opacity = 0
+  }else{
+    border.style.opacity = 1
+  }
+  }else{
+    border.style.opacity = 1
+  }
+}, 500);
+
+
+setInterval(function() {
+  t = k
+setInterval(function() {
+  if(t!=k){
+    typing = true
+  }else{
+    typing = false
+  }
+}, 1);
+}, 2000);
+
+
+function finished() {
+  j = 0
+  k = 0
+  border.style.display = "none"
+  endTime = new Date().getTime();
+  var words = document.querySelectorAll(".word");
+  var NumberOfWords = words.length;
+  var NumberOfCharaters = ""
+  function count(){
+    var count = 0
+    words.forEach((w)=>{
+      w.childNodes.forEach((n)=>{
+       return count++
+      })
+    })
+    NumberOfCharaters = count
+  };
+  count();
+  console.log(NumberOfCharaters,NumberOfWords);
   
-border.style.top = span[k].offsetTop + "px"
-border.style.height = document.querySelector(".word").clientHeight + "px"
-
-}, 10);
-
-
-  
-
+  text.innerHTML = "";
+  text.innerHTML += `<h4>Words - ${NumberOfWords} <br>Characters - ${NumberOfCharaters}<br>WPM - ${Math.floor(NumberOfWords / (((endTime - startTime)/1000)/60))}<br>Time Taken in seconds - ${(endTime-startTime)/1000}</h4>`
+          }
+    
