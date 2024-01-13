@@ -1,53 +1,50 @@
 const paragraph = [
-  "As the sun descends below the majestic mountains, its warm rays create a mesmerizing tapestry of colors that stretch across the vast horizon. The tranquil scene unfolds, casting a serene glow upon the world. Birds soar gracefully in the fading light, returning to their nests with a sense of purpose. Nature, in all its grandeur, prepares for a night of tranquility, and the air becomes imbued with a gentle calmness.",
-
-  "In the heart of a bustling metropolis, amidst towering skyscrapers and ceaseless activity, a lone street musician weaves a soulful melody on his guitar. The sounds of the city fade into the background as the enchanting notes captivate the passersby, offering a brief respite from the urban chaos. The musician's fingers dance on the strings, creating a harmonious oasis amidst the concrete jungle.",
-
-  "In a quaint village nestled between rolling hills, the aroma of freshly baked bread permeates the air, beckoning villagers to gather at the local bakery. The warmth of the oven embraces the community, and laughter mingles with the scents of dough and nostalgia. As the sun sets, casting a golden hue upon cobblestone streets, the village comes alive with the spirit of camaraderie and shared stories.",
-
-  "Lost in the pages of an intricately woven novel, a reader embarks on a journey of imagination and escapism. The words on the pages transport them to distant realms, introducing characters and landscapes that unfold like a vivid tapestry. In the quietude of the reading nook, the reader loses track of time, immersed in the literary magic that transcends the boundaries of reality.",
-
-  "A group of friends gathers around a crackling bonfire, the warmth of the flames mirroring the camaraderie that flickers among them. Sparks ascend into the night sky, carrying with them shared stories and laughter. The crackling embers echo the ebb and flow of conversation, creating a symphony of friendship beneath a star-studded canopy.",
-
-  "Beneath a celestial canvas, a telescope stands as a gateway to the cosmos. A curious mind peers through the lens, unlocking the secrets of distant galaxies and celestial wonders. The night sky becomes a vast playground of exploration, and each discovery fuels a sense of awe that transcends the earthly realm.",
-
-  "In a vibrant marketplace, stalls overflow with a kaleidoscope of fresh fruits and vegetables. The colors create a sensory mosaic, enticing shoppers with nature's bounty. Vendors engage in lively banter, and the market becomes a bustling stage where the orchestra of commerce plays a lively tune.",
-
-  "As raindrops dance upon leaves in a gentle rhythm, flowers in a garden seem to rejoice. Nature's gentle orchestra orchestrates a symphony of growth and renewal. The earth absorbs the life-giving moisture, and petals glisten like jewels in the soft light, capturing the essence of nature's embrace.",
-
-  "The wheels of a bicycle spin tirelessly as a cyclist navigates scenic routes, the wind whispering secrets of distant landscapes. Each pedal stroke becomes a rhythmic dance, and the open road unfolds as a canvas for both exploration and self-discovery. The cyclist becomes one with the journey, chasing horizons with boundless enthusiasm.",
-
-  "On a tranquil morning, a cup of hot tea becomes a ritual, a moment of solace that transcends the confines of time. The warmth emanating from the porcelain cup creates a cocoon, and with each sip, a soothing melody of comfort and rejuvenation plays on the senses.",
-
-  "Within the heart of a dense forest, ancient trees stand as sentinels of time, their branches forming a verdant canopy that filters sunlight into a mosaic of emerald hues. The forest floor, adorned with fallen leaves and delicate ferns, becomes a realm where nature's whispers echo through the rustling leaves.",
-
-  "A painter stands before a canvas, brushes dipped in vibrant hues that mirror the palette of emotions. With each stroke, a masterpiece unfolds, capturing the essence of creativity and expression. The artist becomes a conduit for the dance of colors, translating thoughts and emotions onto the blank canvas.",
-
-  "Beside a tranquil lake, a rowboat glides silently, leaving ripples that mirror the quiet beauty of the surrounding nature. The oars cut through the water, creating a gentle cadence that harmonizes with the stillness of the lake. The boat becomes a vessel for contemplation, navigating the waters of reflection.",
-
-  "The laughter of children echoes through a playground, a symphony of innocence and joy that resonates with the simple pleasures of life. Swings sway in the breeze, and the chatter of young voices creates an atmosphere where carefree moments become everlasting memories.",
-
-  "As the seasons change, leaves fall gracefully from trees, creating a tapestry of colors that signals the cyclical dance of nature. Autumn's palette paints the landscape with hues of amber and russet, and the rustling leaves become a poetic ode to the passage of time.",
-
-  "In a bustling kitchen, the sizzle of spices and the clatter of pots and pans orchestrate a culinary symphony that tantalizes the senses. A chef, fueled by passion and creativity, transforms raw ingredients into culinary masterpieces, and the kitchen becomes a sacred space where flavors intertwine in a dance of gastronomic delight.",
-
-  "A solitary lighthouse stands tall against crashing waves, a symbol of resilience and guidance in the midst of turbulent seas. The light emanating from the tower becomes a beacon of hope, cutting through the darkness and offering safe passage to weary travelers.",
-
-  "A scientist peers into a microscope, uncovering the hidden wonders of microscopic life that shape the foundation of the natural world. The intricate dance of cells and microorganisms becomes a silent symphony, revealing the delicate balance that sustains the tapestry of life.",
-
-  "On a mountaintop, a hiker takes a moment to breathe in the crisp mountain air, feeling a profound connection with the majestic peaks. The panoramic vista unfolds, and each step becomes a testament to the resilience of the human spirit and the awe-inspiring grandeur of nature.",
-
-  "In a crowded concert hall, the crescendo of a symphony transports the audience to a realm of emotion, where music becomes a universal language. The conductor guides the orchestra, and the harmonious interplay of instruments creates a transcendent experience that resonates within the hearts of listeners.",
-
-  "At a busy intersection, diverse faces and stories intersect, weaving a tapestry of humanity that celebrates the richness of cultural diversity. Each person becomes a chapter in the collective narrative of the city, contributing to the vibrant mosaic of experiences that define urban life.",
-
-  "As night falls, city lights illuminate the skyline, creating a breathtaking panorama that captures the energy and vitality of urban life. Skyscrapers stand as pillars of progress, and the cityscape becomes a testament to human ingenuity and the ever-evolving nature of civilization.",
-
-  "A dedicated gardener tends to a blooming garden, nurturing plants that embody the cycle of growth and renewal. The fragrance of blossoms fills the air, and the garden becomes a sanctuary where the ebb and flow of life is celebrated in the intricate dance of petals and leaves."]
+    "In the heart of the bustling city, a quaint coffee shop nestled between towering skyscrapers invites patrons to escape the chaos and savor the simplicity of a perfectly brewed cup.",
+    "The elusive beauty of a sunrise paints the sky with hues of pink and gold, a fleeting moment that whispers promises of a new beginning.",
+    "Among the shelves of a dusty bookstore, forgotten tales patiently wait for curious minds to rediscover the magic hidden within their yellowed pages.",
+    "The symphony of raindrops tapping on the window creates a soothing melody, transforming a gloomy day into a cozy haven for contemplation.",
+    "Beneath the surface of the tranquil lake lies a world teeming with life, where silent battles unfold between hidden creatures in an intricate dance of survival.",
+    "Lost in the labyrinth of a dream, surreal landscapes and fantastical creatures blur the lines between reality and imagination.",
+    "The aroma of freshly baked bread wafts through the air, transporting passersby to a simpler time when the kitchen was the heart of every home.",
+    "The dance of fireflies in a moonlit meadow illuminates the night, a magical display that captivates anyone fortunate enough to witness nature's enchanting spectacle.",
+    "Within the confines of a small art studio, an artist pours their emotions onto canvas, creating a masterpiece that speaks volumes without uttering a single word.",
+    "The laughter of children echoes through a sun-drenched playground, a testament to the unbridled joy found in the simplest moments of play.",
+    "Beneath the neon lights of a bustling city, the rhythmic footsteps of pedestrians create a symphony of movement, each person a note in the urban orchestra.",
+    "On the edge of a cliff, the wind whispers secrets to ancient rocks, carrying tales of centuries gone by and the resilience of nature.",
+    "A solitary tree stands tall in a vast desert, a testament to the strength that can be found in isolation and the ability to thrive against all odds.",
+    "The scent of blooming flowers in a botanical garden transports visitors to a fragrant paradise, where colors burst forth in a dazzling display of nature's creativity.",
+    "In a quiet library, the hushed whispers of avid readers mingle with the rustling of pages, creating an atmosphere that reveres knowledge and the pursuit of wisdom.",
+    "A lone wolf traverses a snow-covered landscape, embodying both the solitude of the wilderness and the untamed spirit of the wild.",
+    "The gentle hum of a distant waterfall invites weary travelers to rest by its side, providing a respite from the journey and a moment of serenity.",
+    "Amidst a field of golden wheat, the wind plays a gentle melody as the stalks sway in unison, creating a mesmerizing sea of amber waves.",
+    "The vibrant colors of a bustling market come alive as vendors showcase their wares, creating a lively tapestry of sights, sounds, and aromas.",
+    "A forgotten lighthouse stands stoically against the backdrop of a stormy sea, a silent guardian weathering the tempests of time.",
+    "High above the city lights, a full moon casts a silver glow, bathing the world in an ethereal radiance that captivates star-gazers and dreamers alike.",
+    "A river meanders through a dense forest, reflecting the lush greenery that thrives along its banks, creating a tranquil haven for wildlife.",
+    "The art of storytelling comes alive around a crackling campfire, where tales of adventure, mystery, and imagination captivate eager listeners.",
+    "Within the intricate web of a spider, dewdrops glisten like pearls in the morning sun, a delicate masterpiece woven in the quiet realms of nature.",
+    "The architectural marvels of ancient civilizations stand as silent witnesses to the passage of time, telling stories of innovation, craftsmanship, and the human spirit.",
+    "A field of sunflowers turns its golden faces towards the sun, a vibrant display of nature's resilience and the pursuit of light even in the darkest moments.",
+    "In the heart of a bustling kitchen, chefs orchestrate a culinary symphony, transforming raw ingredients into works of art that delight the senses.",
+    "A lone traveler navigates the twisting alleys of an old city, discovering hidden gems and encountering the rich tapestry of cultures that have left their mark.",
+    "The soft glow of fireflies in a summer night's sky creates a magical ambiance, evoking a sense of wonder that transcends age and time.",
+    "At the summit of a mountain, the crisp mountain air and panoramic views offer a humbling perspective on the vastness of the world below.",
+    "Beneath a canopy of stars, the rhythmic beat of tribal drums accompanies a dance that celebrates the connection between humanity and the cosmos.",
+    "The laughter of friends gathered around a bonfire carries across a beach, creating memories that become timeless treasures etched in the sands of time.",
+    "A street artist transforms a blank wall into a vibrant mural, adding a splash of color to the urban landscape and sparking conversations about art and expression.",
+    "A vintage record player spins a timeless melody, filling the room with the warm crackle of vinyl and the soulful tunes of yesteryear.",
+    "The scent of pine and the rustle of leaves accompany a solitary hike through a dense forest, offering a sanctuary for introspection and communion with nature.",
+    "A diverse array of street food vendors entice passersby with exotic flavors and aromatic spices, creating a culinary journey through the bustling streets of a vibrant city.",
+    "In the quiet moments before dawn, a photographer captures the soft glow of city lights against a still night sky, freezing a moment in time that is both serene and ephemeral.",
+    "A vintage bookstore exudes the comforting scent of well-worn pages, inviting book lovers to explore the shelves and lose themselves in the stories waiting to be discovered.",
+    "A historic castle atop a hill tells tales of battles won and lost, its weathered stones echoing with the whispers of centuries-old secrets.",
+    "The rhythmic sound of waves crashing against the shore lulls beachgoers into a state of relaxation, a timeless dance between the ocean and the sandy coastline."
+]
 var CurrentPara = ""
 var ParaWords = ""
+var typedPara = []
 var text = document.querySelector(".text");
-var border = document.querySelector(".borderLeft");
+var border = document.querySelector(".border");
 var ref = document.querySelector(".refresh");
 var inputt = document.querySelector("input");
 var select = document.querySelector("select");
@@ -59,11 +56,21 @@ var startTime = "";
 var endTime = "";
 var T = false;
 
+var elm = document.createElement("div")
+elm.setAttribute("class","load")
+elm.innerHTML = `<span>Loading...</span>`
+document.querySelector("body").appendChild(elm)
+
+window.addEventListener("load",()=>{
+  setTimeout(function() {
+  document.querySelector(".load").remove()
+  }, 500);
+} )
+    
 
 
 
 insertText();
-
 function insertText() {
 
   CurrentPara = paragraph[Math.floor(Math.random()*paragraph.length)];
@@ -84,11 +91,10 @@ function insertText() {
     
    for (let i = 0; i < words.length; i++) {
       var char = Array.from(ParaWords[i]);
-      char.push(" ");
       char.forEach((ch)=>{
         var span = document.createElement("span");
-        span.setAttribute("class","character");
-        span.style.width = "30px";
+        span.setAttribute("class","span");
+       
         span.style.fontSize = select.value + "px";
         span.innerHTML = ch;
         words[i].appendChild(span);
@@ -97,58 +103,67 @@ function insertText() {
     
   
 }
-    
-  
-inputt.addEventListener("input",(e)=>{
-  
+
+
+document.addEventListener("input",(e)=>{
+  var value = inputt.value
   var word = document.querySelectorAll(".word")
-  var span = word[j].childNodes;
-  var currentWord = Array.from(inputt.value);
+  var characters = word[j].childNodes
+  
+  
   
   if(e.data == " "){
-    j++
-    k = 0
+    j++ 
+    k=0
     inputt.value = ""
-    if(j > word.length-1){
-      j--
-    }
   }else if(e.data == null){
-    span.forEach((spn)=>{
-      spn.style.color = "grey"
+    characters.forEach((ch)=>{
+      ch.classList.remove("spanI")
+      ch.classList.remove("spanC")
+      ch.classList.add("span")
     })
+     var arr = Array.from(value)
+     for (let i = 0; i < arr.length; i++){
+        if(arr[i] == characters[i].innerHTML){
+          characters[i].classList.add("spanC")
+        }else{
+          characters[i].classList.add("spanI")
+          
+        }
+     }
     k--
-    for (let i = 0; i < currentWord.length; i++) {
-      
-      if(currentWord[i] == span[i].innerHTML){
-        span[i].style.color = "white"
-      }else{
-        span[i].style.color = "brown"
-       
-      }
-    }
   }else{
     k++
-    if(T == false){
-      startTime = new Date().getTime();
-      console.log(startTime)
-      T = true
-    }
-    for (let i = 0; i < currentWord.length; i++) {
-     
-      if(currentWord[i] == span[i].innerHTML){
-        span[i].style.color = "white"
-      }else{
-        span[i].style.color = "brown"
-       
-      }
+    var arr = Array.from(value)
+    for (let i = 0; i < arr.length; i++){
+       if(arr[i] == characters[i].innerHTML){
+         characters[i].classList.add("spanC")
+       }else{
+         characters[i].classList.add("spanI")
+         
+       }
     }
   }
   
-  if(j == word.length-1 && k == span.length-1){
-    finished();
+  if(j > word.length-1){
+    j--
+    k = 0
   }
+ 
+  if(j == word.length-1 && k == word[j].childNodes.length ){
+    setTimeout(function() {
+      finished();
+    }, 200);
+  }
+      
+  if(T == false){
+    startTime = Date.now()
+    console.log(Date.now())
+    T = true 
+  }
+  caret();
+})
   
-} )
 
 
 
@@ -157,13 +172,15 @@ ref.addEventListener("click",()=>{
   j = 0;
   k = 0;
   t = "";
+  typedPara = []
   typing = false;
   startTime = "";
   endTime = "";
   T = false;
   inputt.value = "";
   text.innerHTML = "";
-  
+  inputt.style.display = "block"
+  text.style.filter = "blur(10px)"
   text.querySelectorAll(".word").forEach((each)=>{
     each.remove();
   })
@@ -192,27 +209,48 @@ document.querySelector("select").addEventListener("change",()=>{
 
 
 
-setInterval(function() {
-  var words = document.querySelectorAll(".word");
-  var span = words[j].querySelectorAll(".character");
+var caret = ()=>{
+  
+  var words = document.querySelectorAll(".word")
+  var pos = ""
+  words[j].childNodes.forEach((ech)=>{
+    if(ech.classList.contains("spanC") || ech.classList.contains("spanI")){
+      pos = ech.getBoundingClientRect();
+    }
+  })
+  
+ 
+ if(!pos){
+   border.style.left = words[j].childNodes[0].getBoundingClientRect().x + "px"
+   border.style.top = words[j].childNodes[0].getBoundingClientRect().y + "px"
+   inputt.style.left = words[j].childNodes[0].getBoundingClientRect().x + "px"
+   inputt.style.top = words[j].childNodes[0].getBoundingClientRect().y + "px"
+   inputt.style.height = words[j].childNodes[0].getBoundingClientRect().height + "px" 
+ }else{
+   border.style.left = pos.x + pos.width +  "px"
+   border.style.top = pos.y + "px"
+   border.style.height = pos.height + "px" 
+   inputt.style.left = pos.x + pos.width +  "px"
+   inputt.style.top = pos.y + "px"
+   inputt.style.height = pos.height + "px" 
+ }
    
   
-     
-     
-   border.style.left = span[k].getBoundingClientRect().x  + "px"
-   border.style.top = span[k].getBoundingClientRect().y + "px"
-   border.style.height = select.value + "px"
-   
-   inputt.style.left = span[k].getBoundingClientRect().x  + "px"
-   inputt.style.top = span[k].getBoundingClientRect().y + "px"
-   inputt.style.height = select.value + "px"
+}
 
-}, 100);
+document.addEventListener("click",()=>{
+  caret()
+} )
+  
+  
+
+
+
 
 setInterval(function() {
   if(!typing){
   if(border.style.opacity == 1){
-    border.style.opacity = 0
+    border.style.opacity = 0.25
   }else{
     border.style.opacity = 1
   }
@@ -230,18 +268,37 @@ setInterval(function() {
   }else{
     typing = false
   }
-}, 1);
-}, 2000);
+}, 10);
+
+    caret();
+}, 500);
 
 
+  
 function finished() {
   j = 0
   k = 0
+  
+  text.style.filter = "blur(0px)"
+  
+  inputt.style.display = "none"
+  crrt();
+  
+  endTime = Date.now();
   border.style.display = "none"
-  endTime = new Date().getTime();
+ 
+ console.log(startTime,endTime)
+ 
   var words = document.querySelectorAll(".word");
   var NumberOfWords = words.length;
   var NumberOfCharaters = ""
+  var correctWords = document.querySelectorAll(".correct")
+  var correctCharacters = document.querySelectorAll(".spanC")
+  
+  words.forEach((wk)=>{
+    console.log(wk)
+  })
+  
   function count(){
     var count = 0
     words.forEach((w)=>{
@@ -252,9 +309,67 @@ function finished() {
     NumberOfCharaters = count
   };
   count();
-  console.log(NumberOfCharaters,NumberOfWords);
   
   text.innerHTML = "";
-  text.innerHTML += `<h4>Words - ${NumberOfWords} <br>Characters - ${NumberOfCharaters}<br>WPM - ${Math.floor(NumberOfWords / (((endTime - startTime)/1000)/60))}<br>Time Taken in seconds - ${(endTime-startTime)/1000}</h4>`
-          }
+  text.innerHTML += `<div class="result">
+  <div/><span>Accuracy  </span><span class="high">${((correctWords.length/NumberOfWords) *100).toFixed(2)}%</span></div>
+ 
+  <div><span>Time Taken </span><span class="high">${((endTime-startTime-(200))/1000).toFixed(1)} s</span> </div>
+ 
+  <div><span>WPM</span> <span class="high">${Math.floor(correctWords.length / (((endTime - startTime)/1000)/60))}</span></div>
+ 
+  <div><span>Raw WPM </span> <span class="high">${Math.floor(NumberOfWords / (((endTime - startTime)/1000)/60))}</span> </div>
+   
+  <div><span>Words</span><span class="high">${correctWords.length}/${NumberOfWords}</span></div>
+ 
+  <div><span>Characters </span> <span class="high">${correctCharacters.length}/${NumberOfCharaters}</span></div>
     
+  </div>`
+}
+
+
+function crrt() {
+   var words = document.querySelectorAll(".word");
+   
+   words.forEach((w)=>{
+     var CountOfCorrect = 0;
+     var CountOfIncorrect = 0;
+     var Characters = w.childNodes
+      
+      Characters.forEach((ch)=>{
+        if(ch.classList.contains("spanC")){
+          CountOfCorrect++
+        }else if(ch.classList.contains("spanI")){
+          CountOfIncorrect++
+        }else{
+          CountOfIncorrect++
+        }
+      })
+      
+      if(CountOfIncorrect == 0){
+        w.classList.add("correct")
+      }else{
+        w.classList.add("incorrect")
+        
+      }    
+          
+   })
+    
+    console.table(words)     
+}
+
+inputt.addEventListener("focus",()=>{
+  text.style.filter = "blur(0px)"
+  inputt.style.opacity = 0
+})
+  
+inputt.addEventListener("blur",()=>{
+  inputt.style.opacity = 1
+  if(document.querySelector(".result")){
+    text.style.filter = "blur(0px)"
+  }else{
+    text.style.filter = "blur(10px)"
+  }
+})
+ 
+   
