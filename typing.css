@@ -24,21 +24,37 @@ body{
 }
 
 .span{
-  color: ;
+  color: grey;
   display: inline-block;
-  border-right: 0px solid black;
-  font-size: 16px;
-  background-color: ;
   text-align: center;
-  transition: all 0.1s linear;
+  transition: left 0.1s linear;
 }
+.spanC{
+  color: white;
+  display: inline-block;
+  text-align: center;
+  transition: left 0.1s linear;
+}
+.spanI{
+  color: brown;
+  display: inline-block;
+  text-align: center;
+  transition: left 0.1s linear;
+}
+
 input{
+  width: 170px;
   outline: none;
-  opacity: 0;
+  opacity: 1;
   position: fixed;
-  border: 2px solid black;
+  border: 0px solid black;
+  border-radius: 5px;
   position: fixed;
-  transform: translate(-50%, 0);
+  text-align: center;
+  transform: translate(0%, 0);
+  transition: all 0.1s linear;
+  z-index: 2;
+  font-size: 12px;
 }
 
 .custom-para{
@@ -50,16 +66,18 @@ input{
   text-align: center;
 }
 .refresh {
-  margin:50px;
+  margin: 0px 0px 30px 0px;
 }
 .text{
   color: white;
-  overflow:scroll;
   font-family: "Roboto Mono;
   position: relative;
   display: flex;
+  width: 100%;
+  height: auto;
   justify-content: flex-start;
   flex-wrap: wrap;
+  filter: blur(10px);
 }
 .text h4{
   text-align: left;
@@ -68,27 +86,27 @@ input{
   width: 100px;
   transition: all 20 ease;
   font-size: 25px;
+  padding: 1px;
 }
 .result {
-  width: 100vw;
-  height:100dvh;
-  background-color: rgba(255,255,255,0.2);
+  width: 100%;
+  border-radius: 20px;
+  background-color: #e5e5e541;
+  border: 2px solid white;
   backdrop-filter: blur(10px);
-  position: fixed;
-  top:0;
-  display: flex; 
-  justify-content: center;
-  padding-left: 50px;
-  flex-direction: column;
+  padding: 50px 0px;
   line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 .word{
-  display:inline-block;
-  margin: 0px 4.5px;
+  margin: 0px 4px;
   color: grey;
   transition: all 0.1s linear;
 }
-.borderLeft{
+.border{
   width: 1px;
   background-color: orange;
   position: fixed;
@@ -108,10 +126,45 @@ select{
   border-radius: 10px;
   font-family: "Roboto Mono";
 }
-.time{
+.head{
   width: 100%;
   display: flex;
-  justify-content: left;
-  align-items: flex-end;
   padding: 20px 5px;
 }
+.high{
+ color: orange;
+ width: 100%;
+}
+.text h4{
+  text-align: center;
+  width: 100%;
+}
+
+.load{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(20px);
+  background-color: #ffffff39;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.result div{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin: 0px auto;
+}
+.result div span{
+  width: 100%;
+}
+.result div span:nth-child(1){
+  text-align: right;
+  padding-right: 10px;
+}
+
