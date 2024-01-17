@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-   
-    <title></title>
-  <style type="text/css" media="all">
-    
+    <style type="text/css" media="all">
+      
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 *{
   margin: 0px;
@@ -30,11 +28,19 @@ body{
   background-color: #0f0f0fcf;
   color: white;
 }
+h1{
+  width: 100%;
+  text-align: left;
+  max-width: 600px;
+  font-family: "System-ui";
+  padding: 5px;
+  margin-bottom: 10px;
+}
 .test{
   width: 100%;
   max-width: 600px;
   text-align: center;
-  margin: 30px 0px;
+  margin: 0px 0px 30px 0px;
 }
 
 .span{
@@ -63,7 +69,7 @@ input{
   opacity: 1;
   position: fixed;
   border: 0px solid black;
-  border-radius: 5px;
+  border-radius: 20px;
   position: fixed;
   text-align: center;
   transform: translate(0%, 0);
@@ -72,27 +78,20 @@ input{
   font-size: 12px;
 }
 
-.custom-para{
-  background-color: white;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 5px;
-  box-shadow: 20px 20px 30px rgba(0,0,0,0.1);
-  text-align: center;
-}
 .refresh {
   margin: 0px 0px 30px 0px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: all 0.1s linear;
-}
-.refresh:active{
   background-color: white;
   color: black;
+}
+.refresh:active{
+  scale: 1.1;
 }
 .text{
   color: white;
@@ -116,12 +115,12 @@ input{
 }
 .result {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: transparent;
   border: 10px solid grey;
   backdrop-filter: blur(1px);
   padding: 50px 0px;
-  margin-top: 30px;
+  margin-top: 10px;
   line-height: 1.5;
   display: flex;
   justify-content: center;
@@ -140,9 +139,6 @@ input{
   left: 0px;
   transition: all 0.175s linear;
 }
-h2{
-  font-family: ;
-}
 select{
   background-color: transparent;
   color: white;
@@ -153,29 +149,7 @@ select{
   border-radius: 10px;
   font-family: "Roboto Mono";
 }
-.head{
-  width: 100%;
-  display: flex;
-  padding: 20px 0px;
-  margin-bottom: 10px;
-  font-family: "Roboto";
-  justify-content: flex-start;
-  animation-name: headAnime;
-  flex-wrap: no-wrap;
-  max-height: 50px;
-  overflow: hidden;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-@keyframes headAnime{
-  0%{
-    opacity: 0.1;
-  }50%{
-    opacity: 0.75;
-  }100%{
-   opacity: 0.1; 
-  }
-}
+
 .high{
  color: orange;
  width: 100%;
@@ -199,7 +173,7 @@ select{
 }
 
 .result div{
-  width: 80%;
+  width: 60%;
   display: flex;
   justify-content: center;
   text-align: left;
@@ -214,14 +188,19 @@ select{
 }
 .fontSize{
   width: 100px;
-  text-align: center;
+  height: 40px;
+  border-radius: 20px;
   padding: 5px;
-  background-color: grey;
+  background-color: white;
+  color: black;
   margin-bottom: 150px;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  font-size: ;
 }
 .fontContainer{
-  background-color: white;
   transition: all 0.5s ease;
   text-align: center;
   width: 100px;
@@ -229,33 +208,31 @@ select{
   position: fixed;
   overflow-y: scroll;
   opacity: 1;
+  padding: 5px;
+  background-color: white;
   display: none;
-  border-radius: 5px;
-  transform: translateY(5px);
+  border-radius: 0px 0px 20px 20px;
+  transform: translateY(1px);
 }
 .fontContainer div{
-  border-radius: 2.5x;
-  margin: 0;
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 5px;
-  font-family: "Roboto Mono";
+  font-family: "System-ui";
   border-bottom: 1px solid white;
 }
 
-  </style>
+    </style>
+    <title></title>
   </head>
   <body>
     <div class="border"></div>
-    <h2>Typing Test</h2>
+    <h1>Typing Test</h1>
     <div class="test">
 
      
-     <div class="head">
-       <h2 class="second">Created By Indra..</h2>
-     </div>
-      
-        <input placeholder="Click To Start" autocapitalize="none"/>
+     
+     <input type="text/submit/hidden/button/image" placeholder="Click To Start" autocapitalize="none" name="" id="" value="" />
       
         
       <div class="text">
@@ -292,7 +269,7 @@ select{
       <div class="FS" >32px</div>
    </div>
     
-    <h6 style="margin:30px 0px;">Turn off autocorrect if you want best experience</h6>
+    <h6 style="margin:30px 0px; text-align:center; line-height:2;">Turn off autocorrect if you want best experience<br>Created by Indra</h6>
     <script type="text/javascript" charset="utf-8">
       const paragraph = [
     "In the heart of the bustling city, a quaint coffee shop nestled between towering skyscrapers invites patrons to escape the chaos and savor the simplicity of a perfectly brewed cup.",
@@ -450,7 +427,7 @@ document.addEventListener("input",(e)=>{
   if(j == word.length-1 && k == word[j].childNodes.length ){
     setTimeout(function() {
       finished();
-    }, 200);
+    }, 100);
   }
       
   if(T == false){
@@ -478,8 +455,10 @@ var open = false
 document.querySelector(".fontSize").addEventListener("click",()=>{
   if(open == false){
     document.querySelector(".fontContainer").style.display = "block"
+    document.querySelector(".fontSize").style.borderRadius = "20px 20px 0px 0px"
     open = true
   }else{
+    document.querySelector(".fontSize").style.borderRadius = "20px"
     document.querySelector(".fontContainer").style.display = "none"
     open = false
   }
@@ -490,6 +469,7 @@ document.querySelectorAll(".FS").forEach((eh)=>{
     value = v[0] + v[1]
     fontsize(value)
     document.querySelector(".fontContainer").style.display = "none"
+    document.querySelector(".fontSize").style.borderRadius = "20px"
     open = false
   })
 })
@@ -696,4 +676,4 @@ inputt.addEventListener("blur",()=>{
 // document.getElementsByTagName('head')[0].appendChild(meta);
     </script>
   </body>
-        </html>
+</html>
