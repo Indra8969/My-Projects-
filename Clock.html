@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css" media="all">
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        height: 100dvh;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .clock{
+        width: 185px;
+        max-width: 185px;
+        height: 185px;
+        max-height: 185px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        transition: all linear 0.5s;
+        border: 10px solid #d2d2d2;
+        scale: 1;
+        transform: translate(0,-50px);
+        box-shadow: 0px 20px 100px rgba(0,0,0,0.1);
+      }
+      .hour{
+        width: 3px;
+        translate: -1.5px 0px;
+        height: 55px;
+        background-color: #590a0a;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform-origin: bottom;
+        rotate: 0deg;
+        border-radius: 1.5px;
+        transition: all linear 1s;
+        z-index: 2;
+  
+      }
+      .min{
+        width: 1.5px;
+        translate: -0.75px 0px;
+        height: 70px;
+        background-color: #000;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        rotate: 0deg;
+        border-radius: 0.75px;
+        transition: all linear 0.75s;
+        z-index: 1;
+        
+      }
+      .sec{
+        width: 0.75px;
+        border-radius: 0.5px;
+        translate: -0.5px 0px;
+        height: 70px;
+        background-color: #000;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        rotate: 0deg;
+        transition: all linear 250ms;
+        z-index: 3;
+      }
+      .center{
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #d2d2d2ff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-6px,-6px);
+        z-index: 5;
+        opacity: 1;
+      }
+      .clock h6{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: grey;
+        font-size: 8px;
+        text-align: center;
+      }
+      .scale {
+        margin: 100px 0px 20px 0px;
+        color: white;
+        position: fixed;
+        bottom: 0px;
+      }
+      button{
+        width: 30px;
+        height: 30px;
+        border: 0px;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.5);
+        color: white;
+        backdrop-filter: blur(5px);
+        margin: 0px 10px;
+      }
+      .belt{
+        z-index: -2;
+        width: 100px;
+        height: 100dvh;
+        min-height: 100dvh;
+        background-color: grey;
+        position: absolute;
+        transition: all linear 0.5s;
+      }
+      .full{
+        border-radius: 5px;
+        background-color: white;
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        padding: 10px;
+        opacity: 0.1;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="full">
+      [ Full screen ]
+    </div>
+    <div class="clock">
+      <div class="hour">
+        
+      </div>
+      <div class="min">
+        
+      </div>
+      <div class="sec">
+        
+      </div>
+      <div class="center">
+        
+      </div>
+      <h6>Indra</h6>
+    </div>
+    <div class="scale">
+      <button>-</button>
+      SIZE
+      <button>+</button>
+    </div>
+    <div class="belt">
+      
+    </div>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    var hourD = document.querySelector(".hour")
+    var minD = document.querySelector(".min")
+    var secD = document.querySelector(".sec")
+    
+    var date = new Date()
+    var hour = date.getHours()
+    var min = date.getMinutes()
+    var sec = date.getSeconds()
+    var day = date.getDay()
+    var d = date.getDate()
+    var m = date.getMonth()
+    var y = date.getFullYear()
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const DayNames = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+    
+    var hourV = hour %12 * 30 + min * 0.5
+    var minV = min *6
+    var secV = sec * 6
+
+    document.querySelector("h6").innerHTML += `<br>${DayNames[day-1]}, ${d} ${monthNames[m]}`
+   
+   
+    setInterval(function() {
+      hourV += 0.00166668
+      minV += 0.10002
+      secV += 6
+      hourD.style.rotate = hourV + "deg"
+      minD.style.rotate = minV + "deg"
+      secD.style.rotate = secV + "deg"
+    }, 1000);
+    
+    var btns = document.querySelectorAll("button")
+    var s = 1
+    var w = 100
+    btns[0].addEventListener("click",()=>{
+      if(s < 0.2){
+        s = 0.2
+        w = 20
+      }
+      w-=10
+      document.querySelector(".clock").style.scale = s-=0.1
+      document.querySelector(".belt").style.width = w + "px"
+    } )
+    btns[1].addEventListener("click",()=>{
+      if(s > 2.5){
+        s = 2.5
+        w = 250
+      }
+      w += 10
+      document.querySelector(".clock").style.scale = s+=0.1
+      document.querySelector(".belt").style.width = w + "px"
+    } )
+    
+    document.querySelector(".full").addEventListener("click",()=>{
+      document.querySelector("body").requestFullscreen()
+    })
+  </script>
+</html>
+      
+        
