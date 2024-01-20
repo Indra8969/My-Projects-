@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@300&display=swap');
 .main{
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
