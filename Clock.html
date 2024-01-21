@@ -177,13 +177,13 @@
     var m = date.getMonth()
     var y = date.getFullYear()
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const DayNames = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+    const DayNames = ['sun', Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
     
     var hourV = hour %12 * 30 + min * 0.5
     var minV = min *6
     var secV = sec * 6
 
-    document.querySelector("h6").innerHTML += `<br>${DayNames[day-1]}, ${d} ${monthNames[m]}`
+    document.querySelector("h6").innerHTML += `<br>${DayNames[day]}, ${d} ${monthNames[m]}`
    
    
     setInterval(function() {
