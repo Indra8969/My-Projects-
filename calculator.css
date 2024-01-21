@@ -10,7 +10,7 @@
 
 .main{
   width: 100vw;
-  height: 100vh;
+  min-height: 100dvh;
   background-color: rgb(242, 242, 242);
   opacity: 1;
   display: flex;
@@ -30,6 +30,7 @@
   align-items: center;
   flex-wrap: wrap;
   box-shadow: 1px 40px 30px rgba(0,0,0,0.2);
+  margin: 15px 0px;
 }
 button{
   height: 45px;
