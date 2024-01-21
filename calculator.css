@@ -10,7 +10,6 @@
 
 .main{
   width: 100vw;
-  min-height: 100dvh;
   background-color: rgb(242, 242, 242);
   opacity: 1;
   display: flex;
