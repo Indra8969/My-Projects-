@@ -95,5 +95,14 @@
     </div>
     </div>
   </body>
-  
+    <script type="text/javascript" charset="utf-8">
+    window.addEventListener("load",()=>{
+      setTimeout(()=>{
+       document.querySelector(".content").scrollTo(0, document.querySelector(".content").getBoundingClientRect().height)
+      },1000)
+      setTimeout(()=>{
+       document.querySelector(".content").scrollTo(0,0)
+      },3000)
+    })
+    </script>
 </html>
