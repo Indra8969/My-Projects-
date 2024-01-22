@@ -4,10 +4,15 @@ html{
 *{
   margin: 0px;
   padding: 0px;
+  box-sizing:border-box;
 }
 @font-face{
   src: url(DMSans-Regular.ttf);
   font-family: DMSans-Regular; 
+}
+body{
+  min-height: 100dvh;
+  padding: 35px 10px;
 }
 .main{
   font-family: "DMSans-Regular";
@@ -23,7 +28,7 @@ html{
 }
 .container{
   width: 310px;
-  height: 590px;
+  height: 550px;
   background-color: grey;
   border-radius: 10px;
   margin-top: 20px;
