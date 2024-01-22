@@ -240,9 +240,10 @@ hr{
         root.style.setProperty("--input-clr","white");
         btn.querySelector("span").innerHTML = "light_mode"
         btn.querySelector("span").style.rotate = "45deg"
-        var meta = document.querySelectorAll("meta")
-        meta[3].content = "#fff"
         mode = "white"
+        var meta = document.querySelectorAll("meta")
+        meta[3].content = "white"
+        
       }else {
         root.style.setProperty("--pri-clr","#0c0c0c");
         root.style.setProperty("--sec-clr","rgb(45,45,45)");
@@ -251,9 +252,10 @@ hr{
         root.style.setProperty("--input-clr","#0d0d0d");
         btn.querySelector("span").innerHTML = "dark_mode"
         btn.querySelector("span").style.rotate = "0deg"
+        mode = "dark
         var meta = document.querySelectorAll("meta")
         meta[3].content = "#0d0d0d"
-        mode = "dark"
+       
       }
     })
         
