@@ -21,6 +21,9 @@
     font-family: LN;
     src: url(DMSans-Regular.ttf);
   }
+ body{
+   padding: 20px 10px;
+ }
   .main{
     width: 100vw;
     min-height: 100dvh;
