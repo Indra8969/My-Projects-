@@ -18,7 +18,7 @@ body{
   font-family: "DMSans-Regular";
   padding: 25px;
   width: calc(100vw-25px);
-  min-height: calc(100dvh-50px);
+  min-height: 100vh;
   background-color: rgba(50,50,50,1);
   color: white ;
   display: flex;
