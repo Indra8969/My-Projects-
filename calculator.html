@@ -236,6 +236,10 @@ hr{
         root.style.setProperty("--input-clr","white");
         btn.querySelector("span").innerHTML = "light_mode"
         btn.querySelector("span").style.rotate = "45deg"
+        var elm = document.createElement("meta")
+        elm.setAttribute("name","theme-color")
+        elm.setAttribute("content","white")
+        document.querySelector("head").appendChild(elm)
         mode = "white"
       }else {
         root.style.setProperty("--pri-clr","#0c0c0c");
@@ -245,6 +249,10 @@ hr{
         root.style.setProperty("--input-clr","#0d0d0d");
         btn.querySelector("span").innerHTML = "dark_mode"
         btn.querySelector("span").style.rotate = "0deg"
+        var elm = document.createElement("meta")
+        elm.setAttribute("name","theme-color")
+        elm.setAttribute("content","black")
+        document.querySelector("head").appendChild(elm)
         mode = "dark"
       }
     })
