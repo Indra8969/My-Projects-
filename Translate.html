@@ -64,6 +64,7 @@
         transition: all linear 3s;
         font-family: "Baloo Bhai 2";
         text-align: justify;
+	text-indent: 25px;
       }
       @keyframes load{
         0%{
@@ -167,7 +168,7 @@ const options = {
         	const result = await response.json();
         	console.log(result);
         	document.querySelector(".Translation").style.animationName = "--"
-        	document.querySelector(".Translation").innerHTML = "&nbsp;&nbsp" + result.trans
+        	document.querySelector(".Translation").innerHTML = result.trans
        } catch (error) {
         	console.error(error);
        }
