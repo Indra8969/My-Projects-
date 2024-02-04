@@ -70,6 +70,9 @@
         text-decoration: none;
         color: black;
       }
+      .box:active{
+        background-color: lightblue;
+      }
 
     </style>
   </head>
@@ -108,12 +111,7 @@
       var boxes = document.querySelectorAll(".box")
     boxes.forEach((each)=>{
       each.addEventListener("click",()=>{
-        
-        each.style.backgroundColor = "grey"
-        setTimeout(()=>{
-          each.style.backgroyndColor = "white"
           window.location.href = each.querySelector("a").href
-        },100)
       })
     })
     </script>
