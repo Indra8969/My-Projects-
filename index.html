@@ -109,6 +109,10 @@
     boxes.forEach((each)=>{
       each.addEventListener("click",()=>{
         window.location.href = each.querySelector("a").href
+        each.style.backgroundColor = "grey"
+        setTimeout(()=>{
+          each.style.backgroyndColor = "white"
+        },100)
       })
     })
     </script>
