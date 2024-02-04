@@ -105,5 +105,11 @@
        document.querySelector(".content").scrollTo(0,0)
       },3000)
     })
+      var boxes = document.querySelectorAll(".box")
+    boxes.forEach((each)=>{
+      each.addEventListener("click",()=>{
+        window.location.href = each.querySelector("a").innerHTML
+      })
+    })
     </script>
 </html>
