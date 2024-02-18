@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css" media="all">
+      body{
+      }
+      .size{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        align-items: center;
+      }
+      .link{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      input{
+        width: 100px;
+        border: 0px;
+        background-color: #d9d9d9;
+        height: 30px;
+        margin: 5px;
+        border-radius: 5px;
+        outline: none; 
+        padding: 0px 10px;
+      }
+      iframe{
+        width: 1024px;
+        height: 600px;
+        border-radius: 10px;
+        transition: all 0.5s linear;
+      }
+      .l{
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="size">
+       <input class="w" placeholder="Width" type="number" name="" id="" value="" />
+       ×
+       <input class="h" placeholder="Height" type="number" name="" id="" value="" />
+    </div>
+    <div class="link">
+      <input class="l" placeholder="Link" type="text/submit/hidden/button/image" name="" id="" value="" />
+    </div>
+   <iframe sandbox="allow-same-origin src="https://indra8969.github.io/My-Projects-" frameborder="0"></iframe>
+    
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    var w = document.querySelector(".w")
+    w.addEventListener("keyup",(e)=>{
+        document.querySelector("iframe").style.width = w.value + "px"
+    })
+    var h = document.querySelector(".h")
+    h.addEventListener("keyup",(e)=>{
+        document.querySelector("iframe").style.height = h.value + "px"
+    })
+    var l = document.querySelector(".l")
+    l.addEventListener("keyup",(e)=>{
+        document.querySelector("iframe").src = l.value
+    })
+  </script>
+</html>
