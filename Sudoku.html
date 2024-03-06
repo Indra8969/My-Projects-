@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">    <link .com/0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+    <link rel="stylesheet" href="Sudoku.css" type="text/css" media="all" />
+ </head>
+  <body>
+    <div class="main">
+      
+      <div class="openingWindow">
+          
+      </div>
+     
+        <div class="head">
+            <div class="left">
+               <h1>Sudoku</h1>
+            </div>
+            <div class="right">
+                <div class="themeBtn"> <span class="material-symbols-outlined"> dark_mode </span> </div>
+                <div class="newGame">
+                    New Game
+                </div>
+            </div>
+        </div>
+        
+      
+        
+        <div class="bottom">
+            <div class="grid">  
+            </div>
+            <div class="controls">
+              
+              <div class="cntrl">
+                <div class="putValue">  
+                </div>
+               
+                <div class="buttons">
+                         <div class="btn">
+                             <button type="submit" class="erase"><span class="material-symbols-outlined">ink_eraser</span></button>
+                             Erase
+                         </div>
+                         <div class="btn">
+                             <button type="submit" class="hint"><span class="material-symbols-outlined">lightbulb</span></button>
+                             Hint
+                             <div class="remainHints">
+                                3
+                             </div>
+                         </div> 
+                         <div class="btn">
+                             <button type="submit" class="pencil deActiveBtn"><span class="material-symbols-outlined">edit_note</span></button>
+                             Pencil
+                         </div>   
+                    </div>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+                 <div class="Rules">
+                          <h2>
+                               Rules and Guide
+                          </h2>  
+                          <p>
+                              <b>1. Grid:</b> 
+                              <span>
+                                  Sudoku is played on a 9x9 grid, divided into nine 3x3 subgrids.
+                              </span>
+                          </p>
+                          <p>
+                              <b>2. Numbers:</b>
+                              <span>
+                                  Each cell in the grid must contain a single digit from 1 through 9.
+                              </span>
+                          </p>
+                          <p>
+                              <b>3. Unique Numbers:</b>
+                              <span>
+                                  Each row, column, and 3x3 subgrid (also called a "box" or "region") must contain all the digits from 1 through 9 without repetition.
+                              </span>
+                          </p>
+                          <p>
+                              <b> 4. Starting Grid: </b>
+                              <span>
+                                   The game begins with a partially filled grid, with some cells already containing digits.
+                              </span>
+                          </p>
+                          <p>
+                              <b> 5. Objective: </b>
+                              <span>
+                                  Fill in the empty cells so that every row, column, and 3x3 subgrid contains all the digits from 1 through 9, without repetition.
+                              </span>
+                          </p>
+                          <p>
+                              <b>6. Solving Strategy:</b>
+                              <span>
+                                   Use logic and deduction to determine the correct digits for each cell. Start by identifying any numbers that are already provided in the starting grid, and then use the unique digits rule to deduce the values of other cells.
+                              </span>
+                          </p>
+                          <p>
+                              <b>7. Pencil Marks:</b>
+                              <span>
+                                 Use "pencil marks" to keep track of possible candidates for each cell. These are small numbers written lightly in the corners of the cell to indicate potential values.
+                              </span>
+                          </p>
+                          <p>
+                              <b>8. Hint:</b>
+                              <span>
+                                   Hint Button give you hint maximum 3 times. Every time when you click on the hint button your hint count decrease by 1 and it will give you hint.
+                              </span>
+                          </p>
+                          <p>
+                              <b>9. Check for Mistakes:</b>
+                              <span>
+                                  Ensure that each number you place adheres to the rules of Sudoku. Mistakes will lead to an incorrect solution.
+                              </span>
+                          </p>
+                          <p>
+                              <b>10. Patience and Persistence:</b>
+                              <span>
+                                   Sudoku requires patience, attention to detail, and logical thinking. Don't be discouraged if you encounter difficulty, and keep practicing to improve your skills.
+                              </span>
+                          </p>
+                          <p>
+                              <b>11. Enjoy the Challenge:</b>
+                              <span>
+                                  Sudoku is a challenging and rewarding puzzle game that exercises the mind. Enjoy the process of solving each puzzle and the satisfaction of completing them.
+                              </span>
+                          </p>
+                          <p style="text-align:center;">... Developer - Indra ...</p>
+                          <p style="text-align:center;">...UnderDevelopment...</p>
+                   </div>
+        </div>   
+    </div> 
+                        
+            
+
+ <script src="Sudoku.js" type="text/javascript" charset="utf-8"></script>
+ 
+  </body>
+</html>
