@@ -4,20 +4,24 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#3c3c3c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
     <style type="text/css" media="all">
-      
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins=Poppins&display=swap');
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Roboto Mono";
+  font-family: "Poppins";
   scroll-behavior: smooth;
   transition: all 0.1s ease;
+  user-select: none;
 }
 body{
   padding: 20px 15px;
@@ -31,10 +35,15 @@ body{
 h1{
   width: 100%;
   text-align: left;
-  font-family: "System-ui";
+  font-family: "Poppins";
   padding: 5px;
   margin-bottom: 10px;
+  color: white;
+  transition: color 0.2s linear;
+  font-size: 30px;
+  text-decoration: undre-line;
 }
+
 .test{
   width: 100%;
   max-width: 1000px;
@@ -72,9 +81,13 @@ input{
   position: fixed;
   text-align: center;
   transform: translate(0%, 0);
-  transition: all 0.2s linear;
+  transition: all 0 s linear;
   z-index: 2;
   font-size: 9px;
+  transition: font-size 0.1s linear;
+}
+input:hover{
+  font-size: 9.5px;
 }
  
 .next{
@@ -86,16 +99,21 @@ input{
   align-items: center;
   border-radius: 50%;
   transition: all 0.1s linear;
+  background-color: transparent;
+  color: white;
+  border: 0.5px solid white;
+}
+.next:hover{
   background-color: white;
   color: black;
-  font-size: 10px;
 }
 .next:active{
   scale: 1.1;
 }
 .text{
   color: white;
-  font-family: "Roboto Mono";
+  font-family: "Poppins";
+  font-weight: 0;
   position: relative;
   display: flex;
   width: 100%;
@@ -118,7 +136,7 @@ input{
   max-width: 450px;
   border-radius: 30px;
   background-color: transparent;
-  border: 10px solid grey;
+  border: 1px solid grey;
   backdrop-filter: blur(1px);
   margin: 30px 0px;
   margin-inline: auto ;
@@ -130,16 +148,17 @@ input{
   padding: 50px 0px 50px 50px;
 }
 .word{
-  margin: 0px 4px;
+  margin: 0px 5px;
   color: grey;
   transition: all 0.1s linear;
 }
+
 .border{
   width: 1px;
   background-color: orange;
   position: fixed;
   left: 0px;
-  transition: all 0.175s linear;
+  transition: all 0.1 linear;
 }
 select{
   background-color: transparent;
@@ -193,27 +212,29 @@ select{
   height: 40px;
   border-radius: 20px;
   padding: 5px;
-  background-color: white;
-  color: black;
-  margin-bottom: 150px;
+  background-color: transparent;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s linear;
   font-size: 12px;
+  border: 0.5px solid white;
+}
+.fontSize:hover{
+  background-color: white;
+  color: black;
 }
 .fontContainer{
   transition: all 0.5s ease;
   text-align: center;
   width: 100px;
-  height: 150px;
-  position: fixed;
+  height: 250px;
   overflow-y: scroll;
   opacity: 1;
   padding: 5px;
-  background-color: white;
-  display: none;
-  border-radius: 0px 0px 20px 20px;
+  background-color: rgb(106, 105, 105);
+  border-radius: 20px;
   transform: translateY(1px);
 }
 .fontContainer::-webkit-scrollbar{
@@ -222,10 +243,46 @@ select{
 }
 .fontContainer div{
   background-color: white;
-  color: black;
+  color: rgb(22, 22, 22);
   padding: 5px;
   font-family: "System-ui";
-  border-bottom: 1px solid white;
+  margin: 2px;
+}
+.fontContainer div:nth-child(1){
+  border-radius: 15px 15px 0px 0px;
+}
+.fontContainer div:nth-last-child(1){
+  border-radius: 0 0 15px 15px;
+}
+.fontContainerWrapper{
+  width: 100vw;
+  height: 100dvh;  
+  background-color: rgba(36, 36, 36, 0.5);
+  position: fixed;
+  top: 0px;
+  backdrop-filter: blur(100px);
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.blink{
+  transition: opacity 1s linear;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.1;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
     </style>
@@ -254,7 +311,7 @@ select{
     <div class="fontSize">
       Font Size
     </div>
-      
+  <div class="fontContainerWrapper">
    <div class="fontContainer">
       <div class="FS" >16px</div>
       <div class="FS" >17px</div>
@@ -274,139 +331,34 @@ select{
       <div class="FS" >31px</div>
       <div class="FS" >32px</div>
    </div>
+  </div>
     
     <script type="text/javascript" charset="utf-8">
      
-      const paragraph = [
-    "In the heart of the bustling city, a quaint coffee shop nestled between towering skyscrapers invites patrons to escape the chaos and savor the simplicity of a perfectly brewed cup.",
-    "The elusive beauty of a sunrise paints the sky with hues of pink and gold, a fleeting moment that whispers promises of a new beginning.",
-    "Among the shelves of a dusty bookstore, forgotten tales patiently wait for curious minds to rediscover the magic hidden within their yellowed pages.",
-    "The symphony of raindrops tapping on the window creates a soothing melody, transforming a gloomy day into a cozy haven for contemplation.",
-    "Beneath the surface of the tranquil lake lies a world teeming with life, where silent battles unfold between hidden creatures in an intricate dance of survival.",
-    "Lost in the labyrinth of a dream, surreal landscapes and fantastical creatures blur the lines between reality and imagination.",
-    "The aroma of freshly baked bread wafts through the air, transporting passersby to a simpler time when the kitchen was the heart of every home.",
-    "The dance of fireflies in a moonlit meadow illuminates the night, a magical display that captivates anyone fortunate enough to witness nature's enchanting spectacle.",
-    "Within the confines of a small art studio, an artist pours their emotions onto canvas, creating a masterpiece that speaks volumes without uttering a single word.",
-    "The laughter of children echoes through a sun-drenched playground, a testament to the unbridled joy found in the simplest moments of play.",
-    "Beneath the neon lights of a bustling city, the rhythmic footsteps of pedestrians create a symphony of movement, each person a note in the urban orchestra.",
-    "On the edge of a cliff, the wind whispers secrets to ancient rocks, carrying tales of centuries gone by and the resilience of nature.",
-    "A solitary tree stands tall in a vast desert, a testament to the strength that can be found in isolation and the ability to thrive against all odds.",
-    "The scent of blooming flowers in a botanical garden transports visitors to a fragrant paradise, where colors burst forth in a dazzling display of nature's creativity.",
-    "In a quiet library, the hushed whispers of avid readers mingle with the rustling of pages, creating an atmosphere that reveres knowledge and the pursuit of wisdom.",
-    "A lone wolf traverses a snow-covered landscape, embodying both the solitude of the wilderness and the untamed spirit of the wild.",
-    "The gentle hum of a distant waterfall invites weary travelers to rest by its side, providing a respite from the journey and a moment of serenity.",
-    "Amidst a field of golden wheat, the wind plays a gentle melody as the stalks sway in unison, creating a mesmerizing sea of amber waves.",
-    "The vibrant colors of a bustling market come alive as vendors showcase their wares, creating a lively tapestry of sights, sounds, and aromas.",
-    "A forgotten lighthouse stands stoically against the backdrop of a stormy sea, a silent guardian weathering the tempests of time.",
-    "High above the city lights, a full moon casts a silver glow, bathing the world in an ethereal radiance that captivates star-gazers and dreamers alike.",
-    "A river meanders through a dense forest, reflecting the lush greenery that thrives along its banks, creating a tranquil haven for wildlife.",
-    "The art of storytelling comes alive around a crackling campfire, where tales of adventure, mystery, and imagination captivate eager listeners.",
-    "Within the intricate web of a spider, dewdrops glisten like pearls in the morning sun, a delicate masterpiece woven in the quiet realms of nature.",
-    "The architectural marvels of ancient civilizations stand as silent witnesses to the passage of time, telling stories of innovation, craftsmanship, and the human spirit.",
-    "A field of sunflowers turns its golden faces towards the sun, a vibrant display of nature's resilience and the pursuit of light even in the darkest moments.",
-    "In the heart of a bustling kitchen, chefs orchestrate a culinary symphony, transforming raw ingredients into works of art that delight the senses.",
-    "A lone traveler navigates the twisting alleys of an old city, discovering hidden gems and encountering the rich tapestry of cultures that have left their mark.",
-    "The soft glow of fireflies in a summer night's sky creates a magical ambiance, evoking a sense of wonder that transcends age and time.",
-    "At the summit of a mountain, the crisp mountain air and panoramic views offer a humbling perspective on the vastness of the world below.",
-    "Beneath a canopy of stars, the rhythmic beat of tribal drums accompanies a dance that celebrates the connection between humanity and the cosmos.",
-    "The laughter of friends gathered around a bonfire carries across a beach, creating memories that become timeless treasures etched in the sands of time.",
-    "A street artist transforms a blank wall into a vibrant mural, adding a splash of color to the urban landscape and sparking conversations about art and expression.",
-    "A vintage record player spins a timeless melody, filling the room with the warm crackle of vinyl and the soulful tunes of yesteryear.",
-    "The scent of pine and the rustle of leaves accompany a solitary hike through a dense forest, offering a sanctuary for introspection and communion with nature.",
-    "A diverse array of street food vendors entice passersby with exotic flavors and aromatic spices, creating a culinary journey through the bustling streets of a vibrant city.",
-    "In the quiet moments before dawn, a photographer captures the soft glow of city lights against a still night sky, freezing a moment in time that is both serene and ephemeral.",
-    "A vintage bookstore exudes the comforting scent of well-worn pages, inviting book lovers to explore the shelves and lose themselves in the stories waiting to be discovered.",
-    "A historic castle atop a hill tells tales of battles won and lost, its weathered stones echoing with the whispers of centuries-old secrets.",
-    "The rhythmic sound of waves crashing against the shore lulls beachgoers into a state of relaxation, a timeless dance between the ocean and the sandy coastline.",
-  "Dogs are known for being friendly and loving companions to people of all ages.",
-  "Rainbows appear in the sky after rainfall, showcasing a beautiful spectrum of colors.",
-  "Trees generously provide shade with their branches and leaves swaying in the gentle breeze.",
-  "Birds create sweet melodies as their vibrant feathers add color to the natural world.",
-  "Sunsets paint the evening sky with a calming palette of warm and soothing hues.",
-  "Books have the magical ability to transport readers to different places through the power of words.",
-  "Laughter has the remarkable quality of making moments more enjoyable, and smiles can brighten anyone's day.",
-  "Music has the incredible capacity to evoke various emotions, and melodies have a calming effect on our hearts.",
-  "Oceans are vast bodies of water that create the rhythmic sound of waves crashing against the shore.",
-  "Stars twinkle in the night sky, creating a mesmerizing display that sparks wonder and awe.",
-  "Mountains stand majestically, their towering peaks reaching towards the clouds in a breathtaking display of nature's grandeur.",
-  "Flowers not only bloom in spring but also carry delightful fragrances that fill the air with sweetness.",
-  "Children play joyfully, their boundless imagination leading them to create wonderful adventures and stories.",
-  "Bicycles offer a sense of freedom, with the wind blowing through hair as riders explore their surroundings.",
-  "Night brings a tranquil quietness, accompanied by the gentle shine of stars that illuminate the dark sky.",
-  "Butterflies gracefully flutter by, showcasing their vibrant colors and adding beauty to the natural world.",
-  "Snowflakes fall softly, blanketing the ground in a serene layer of white during the winter season.",
-  "Ice cream, with its various flavors and delightful taste, is a treat enjoyed by people of all ages.",
-  "Hugs convey warmth and comfort, creating a connection that resonates positively with the heart.",
-  "Raindrops tap against windows during rainy weather, while the indoors becomes a cozy haven.",
-  "Fireplaces crackle softly, and flames dance in a hypnotic display, bringing warmth and ambiance.",
-  "Pizza, with its diverse toppings, satisfies hunger and offers a tasty and enjoyable dining experience.",
-  "Sunflowers follow the sun, their bright petals turning to face its warm and nurturing rays.",
-  "Computers connect people globally, facilitating the swift flow of information and communication.",
-  "Scents from various sources bring back memories and emotions, making smells a powerful sensory experience.",
-  "Rain boots make a playful splash in puddles, bringing joy and laughter to rainy days.",
-  "Cameras have the ability to capture precious moments, preserving memories for years to come.",
-  "Time moves steadily forward, and seconds become cherished memories that define our lives.",
-  "Puzzles challenge the mind, with pieces fitting together to create a satisfying and complete picture.",
-  "Soccer fields host exciting matches, and goals are celebrated with joy and camaraderie.",
-  "Tea warms chilly nights, providing comfort and relaxation in every steaming cup.",
-  "Beaches welcome the rhythmic waves, and the feeling of sand beneath bare feet is incredibly soothing.",
-  "Cars zoom on highways, traversing roads that lead to new adventures and destinations.",
-  "Daisies dot meadows with their simple yet charming beauty, creating a picturesque landscape.",
-  "Chocolate melts on the tongue, and its sweet and rich flavor is a delightful indulgence.",
-  "Clocks tick steadily, marking the passage of time as hours turn into meaningful memories.",
-  "Jellyfish glide gracefully through the ocean, captivating observers with their mesmerizing movements.",
-  "Rainforests teem with diverse life, their canopies hiding incredible wonders waiting to be discovered.",
-  "Art, with its silent language of colors and forms, has the power to express and evoke deep emotions.",
-  "Trains rumble on tracks, embarking on journeys that unfold with rhythmic motion and anticipation.",
-  "Dogs are friendly pets. They love people. Cats nap in sunspots. They purr when happy.",
-  "Rainbows follow rain. Colors are pretty.",
-  "Trees give shade. Leaves move in wind.",
-  "Birds sing sweetly. Feathers are bright.",
-  "Sunsets paint skies. Evenings are calm.",
-  "Books take you places. Words create worlds.",
-  "Laughter is fun. Smiles make days better.",
-  "Music makes feelings. Melodies calm hearts.",
-  "Oceans are big. Waves make noise.",
-  "Stars twinkle. Night skies are nice.",
-  "Mountains are tall. Peaks touch clouds.",
-  "Flowers bloom. Smells are nice.",
-  "Kids play happily. Imagination is big.",
-  "Bikes are fun. Wind feels good.",
-  "Night is quiet. Stars shine.",
-  "Butterflies are pretty. Colors fly by.",
-  "Snow falls softly. Winter is cold.",
-  "Ice cream tastes good. Flavors are yummy.",
-  "Hugs are warm. Hearts feel good.",
-  "Raindrops tap. Inside is cozy.",
-  "Fires crackle. Flames dance.",
-  "Pizza is tasty. Toppings are fun.",
-  "Sunflowers face sun. Petals are bright.",
-  "Computers connect. Information flows fast.",
-  "Scents bring memories. Smells are nice.",
-  "Boots splash in mud. Fun laughter follows.",
-  "Cameras capture moments. Photos last.",
-  "Time moves on. Seconds become memories.",
-  "Puzzles challenge. Pieces fit together.",
-  "Soccer is fun. Goals celebrate.",
-  "Tea warms. Steaming cups soothe.",
-  "Beaches have waves. Sand feels good.",
-  "Cars drive fast. Roads lead places.",
-  "Daisies dot fields. Simple beauty shines.",
-  "Chocolate melts. Sweetness is nice.",
-  "Clocks tick. Hours pass.",
-  "Jellyfish swim. Oceans are big.",
-  "Forests hide life. Canopies hold secrets.",
-  "Art speaks. Colors share emotions.",
-  "Trains go. Journeys unfold."
-]
+     const paragraph = [
+    "Every afternoon, after school, I rush home to find my beloved cat sitting patiently on the old, cozy mat near the window.",
+    "While the cat lazily stretches, I grab my favorite book and settle down beside her, losing myself in the magical world of stories and adventures. ",
+    "On sunny days, my faithful dog and I venture into the lush green park nearby, where the vibrant rays of the sun warm our skin.",
+    "We run and play together, chasing after a bright red ball, laughing joyfully as we enjoy the simple pleasures of companionship and nature.",
+    "As evening approaches, the inviting aroma of dinner wafts through the house, courtesy of my talented mom, who lovingly prepares delicious meals for our family to enjoy. Meanwhile, outside, the melodious songs of birds fill the air, adding to the atmosphere of warmth and contentment.",
+    "In the tranquil waters of the nearby pond, colorful fish gracefully glide, their movements mesmerizing to behold. Sometimes, I sit by the water's edge, observing these aquatic wonders as they dart and swirl, a serene spectacle that never fails to captivate my imagination. ",
+    "Whenever my baby sister giggles, her infectious laughter fills the room, bringing smiles to everyone's faces.",
+    "I love nothing more than to playfully tickle her, eliciting those delightful peals of joy that echo throughout the house, reminding us all of the simple yet profound happiness found in moments of pure, unbridled laughter."
+    ];
+
+
+
 var CurrentPara = ""
 var ParaWords = ""
 var typedPara = []
+var currentWord;
+var currentCharacter;
 var text = document.querySelector(".text");
 text.innerHTML= ""
 var border = document.querySelector(".border");
 var next = document.querySelector(".next");
 var inputt = document.querySelector("input");
+var fontSize = document.querySelector(".fontSize");
 var select = document.querySelector("select");
 var j = 0;
 var k = 0;
@@ -429,7 +381,6 @@ var value = 24
     
 
 
-
 insertText();
 function insertText() {
   var random = Math.floor(Math.random()*paragraph.length)
@@ -449,71 +400,99 @@ function insertText() {
   var words = document.querySelectorAll(".word")
   
   
+  
     
    for (let i = 0; i < words.length; i++) {
       var char = Array.from(ParaWords[i]);
       char.forEach((ch)=>{
         var span = document.createElement("span");
-        span.setAttribute("class","span");
-       
+        span.setAttribute("class","span");     
         span.style.fontSize = Number(value) + "px";
         span.innerHTML = ch;
         words[i].appendChild(span);
       })
     }
-  
+    inputt.style.left = document.querySelector(".word").getBoundingClientRect().x + "px"
+    inputt.style.top = document.querySelector(".word").getBoundingClientRect().y + "px"
 }
 
-
-document.addEventListener("input",(e)=>{
-  var value = inputt.value
-  var word = document.querySelectorAll(".word")
-  var characters = word[j].childNodes
-  
-  
-  
-  if(e.data == " "){
-    j++ 
-    k=0
-    inputt.value = ""
-  }else if(e.data == null){
-    characters.forEach((ch)=>{
-      ch.classList.remove("spanI")
-      ch.classList.remove("spanC")
-      ch.classList.add("span")
-    })
-     var arr = Array.from(value)
-     for (let i = 0; i < arr.length; i++){
-        if(arr[i] == characters[i].innerHTML){
-          characters[i].classList.add("spanC")
-        }else{
-          characters[i].classList.add("spanI")
-          
-        }
-     }
-    k--
+document.addEventListener("scroll", ()=>{
+  border.style.transition = "all 0s  linear"
+  if(!currentCharacter){
+    caret(currentWord, "word")
   }else{
-    k++
-    var arr = Array.from(value)
-    for (let i = 0; i < arr.length; i++){
-       if(arr[i] == characters[i].innerHTML){
-         characters[i].classList.add("spanC")
-       }else{
-         characters[i].classList.add("spanI")
-         
-       }
-    }
+     caret(currentCharacter, "char")
   }
+  border.style.transition = "all 0.09s  linear"
+})
+
+var crrW = 0
+var crrC = 0
+document.addEventListener("input",(e)=>{
   
-  if(j > word.length-1){
-    j--
-    k = 0
-  }
+  inputt.value = ""
+  inputt.value = "Click OR press space to continue "
+
+  var ALLWords = document.querySelectorAll(".word")
+  currentWord = ALLWords[crrW]
+
+  var AllCharacters = currentWord.childNodes
+  currentCharacter = AllCharacters[crrC]
  
-  if(j == word.length-1 && k == word[j].childNodes.length ){
-    setTimeout(function() {
-      finished();
-    }, 100);
+
+  //on clicking to the space select the next word
+  if(e.data == " "){
+    currentWord = ALLWords[crrW++]
+    AllCharacters = currentWord.childNodes
+    crrC = 0
+    if (crrW > ParaWords.length -1 ){
+      finished()
+    }
+  }else if(e.data == null){
+      AllCharacters = ALLWords[crrW].childNodes
+      
+      if(crrC == 0){
+         crrW--
+         currentWord = ALLWords[crrW]
+         AllCharacters = currentWord.childNodes
+         crrC = AllCharacters.length-1
+      }else{
+         crrC--  
+      }
+      if(crrC < 0){
+        crrC = 0
+      }
+      if(crrW < 0){
+        crrW = 0
+      }
+      if(crrW > ParaWords.length - 1 ){
+        crrW = ParaWords.length -1
+      }
+
+      AllCharacters = ALLWords[crrW].childNodes
+
+      if(AllCharacters[crrC].classList.contains("extra")){
+        AllCharacters[crrC].remove()
+      }
+      if(AllCharacters[crrC]){
+        AllCharacters[crrC].classList.contains("spanI") ? AllCharacters[crrC].classList.remove("spanI") : AllCharacters[crrC].classList.remove("spanC");
+      }
+  }else{
+    if(!currentCharacter){
+      ALLWords[crrW].innerHTML += `<span class="span spanI extra" style="font-size:${value*2/3}px">${e.data}</span>`
+      crrC++
+      AllCharacters = ALLWords[crrW].childNodes
+      currentCharacter = AllCharacters[crrC]
+    }else{
+      if(currentCharacter.innerText == e.data){
+        currentCharacter.classList.add("spanC")
+        crrC++
+      }
+      if(currentCharacter.innerText != e.data){
+        currentCharacter.classList.add("spanI")
+        crrC++
+      }
+   }
   }
       
   if(T == false){
@@ -521,31 +500,40 @@ document.addEventListener("input",(e)=>{
    
     T = true 
   }
-  caret();
+  if(crrC == 0){
+    caret(ALLWords[crrW], "word")
+  }else{
+    caret(AllCharacters[crrC-1], "char");
+  }
+
+  if(crrW == ParaWords.length-1 && crrC == currentWord.childNodes.length){
+    setTimeout(() => {
+      finished()
+      border.style.display = "none"
+    }, 200);
+  }
+
 })
   
 
 function fontsize(val) {
   document.querySelectorAll("span").forEach((each)=>{
     each.style.fontSize = val + "px"
+    if(each.classList.contains("extra")){
+      each.style.fontSize = value * 2/3 + "px"
+    }
   })
 }
 fontsize(value)
 
 
-var setTopOfFontContainer = ()=>{
-  document.querySelector(".fontContainer").style.top = document.querySelector(".fontSize").getBoundingClientRect().y + document.querySelector(".fontSize").getBoundingClientRect().height + "px"
-}
-
 var open = false
 document.querySelector(".fontSize").addEventListener("click",()=>{
   if(open == false){
-    document.querySelector(".fontContainer").style.display = "block"
-    document.querySelector(".fontSize").style.borderRadius = "20px 20px 0px 0px"
+    document.querySelector(".fontContainerWrapper").style.display = "flex"
     open = true
   }else{
-    document.querySelector(".fontSize").style.borderRadius = "20px"
-    document.querySelector(".fontContainer").style.display = "none"
+    document.querySelector(".fontContainerWrapper").style.display = "none"
     open = false
   }
 })
@@ -554,9 +542,9 @@ document.querySelectorAll(".FS").forEach((eh)=>{
     var v = Array.from(eh.innerHTML)
     value = v[0] + v[1]
     fontsize(value)
-    document.querySelector(".fontContainer").style.display = "none"
-    document.querySelector(".fontSize").style.borderRadius = "20px"
+    document.querySelector(".fontContainerWrapper").style.display = "none"
     open = false
+    !currentCharacter ? caret(currentWord,"word") : caret(currentCharacter,"char") ;
   })
 })
 
@@ -574,9 +562,9 @@ document.addEventListener("keyup",(e)=>{
 })
 
 function nextTest(){
-  j = 0;
-  k = 0;
-  t = "";
+  fontSize.style.display = "flex"
+  crrC = 0
+  crrW = 0   
   typedPara = []
   typing = false;
   startTime = "";
@@ -591,94 +579,53 @@ function nextTest(){
   })
   insertText();
   border.style.display = "inline-block"
+  inputt.blur()
+  caret(document.querySelector(".word"),"word")
 }
  
 
 
-
-var caret = ()=>{
-  
-  var words = document.querySelectorAll(".word")
-  var pos = ""
-  words[j].childNodes.forEach((ech)=>{
-    if(ech.classList.contains("spanC") || ech.classList.contains("spanI")){
-      pos = ech.getBoundingClientRect();
-    }
-  })
-  
+var timeoutId;
+var caret = (target, type)=>{
  
-   
- if(!pos){
-   border.style.left = words[j].childNodes[0].getBoundingClientRect().x + "px"
-   border.style.top = words[j].childNodes[0].getBoundingClientRect().y + "px"
-   inputt.style.left = words[j].childNodes[0].getBoundingClientRect().x + "px"
-   inputt.style.top = words[j].childNodes[0].getBoundingClientRect().y + "px"
-  
- }else{
-   border.style.left = pos.x + pos.width +  "px"
-   border.style.top = pos.y + "px"
-   border.style.height = pos.height + "px" 
-   inputt.style.left = pos.x + pos.width +  "px"
-   inputt.style.top = pos.y + "px"
+  clearTimeout(timeoutId)
+  border.classList.toggle("blink")
+  timeoutId = setTimeout(() => {
+    border.classList.add('blink')
+    console.log("blink added")
+  }, 1000);
+
+   border.style.height = target.getBoundingClientRect().height + "px"
+ if(type == "word"){
+   border.style.left = target.getBoundingClientRect().x + "px"
+   border.style.top = target.getBoundingClientRect().y + "px"
+   inputt.style.left = target.getBoundingClientRect().x + "px"
+   inputt.style.top = target.getBoundingClientRect().y + "px"  
  }
- 
-   
-  
+ if (type == "char"){
+   border.style.left = target.getBoundingClientRect().x + target.getBoundingClientRect().width + "px"
+   border.style.top = target.getBoundingClientRect().y + "px"
+   inputt.style.left = target.getBoundingClientRect().x + "px"
+   inputt.style.top = target.getBoundingClientRect().y + "px"  
+ }
+  if(inputt.getBoundingClientRect().x + inputt.getBoundingClientRect().width > innerWidth){
+    inputt.style.left = (innerWidth - inputt.getBoundingClientRect().width) + "px"
+  }
 }
 
-document.addEventListener("click",()=>{
- if(!document.querySelector(".result")){
-   caret()
- } 
-} )
-   
-  
-  
 
-
-setInterval(function() {
-  if(!typing){
-  if(border.style.opacity == 1){
-    border.style.opacity = 0.25
-  }else{
-    border.style.opacity = 1
-  }
-  }else{
-    border.style.opacity = 1
-  }
-}, 500);
-
-
-setInterval(function() {
-  t = k
-setInterval(function() {
-  if(t!=k){
-    typing = true
-  }else{
-    typing = false
-  }
-    setTopOfFontContainer();
-    if(!document.querySelector(".result")){
-     caret();
-    }
-      
-}, 10);
-
-}, 500);
-
-
-  
 function finished() {
   j = 0
   k = 0
-  
+  fontSize.style.display = "none"
   text.style.filter = "blur(0px)"
   
   inputt.style.display = "none"
+  border.style.display = "none"
   crrt();
   
   endTime = Date.now();
-  border.style.display = "none"
+  //border.style.display = "none"
  
  
  
@@ -769,6 +716,8 @@ inputt.addEventListener("blur",()=>{
   }
 })
  
+
+
  
 
 // var meta = document.createElement('meta');
@@ -777,4 +726,4 @@ inputt.addEventListener("blur",()=>{
 // document.getElementsByTagName('head')[0].appendChild(meta);
     </script>
   </body>
-</html>
+      </html>
