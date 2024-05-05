@@ -1,7 +1,8 @@
 var selectedBox;
 var sudokuBoard;
 var isPencil = false;
-
+const hint = createProtectedVariable(3)
+var DificultyLevel;
 
 //time counter
 var timeElem = document.querySelector(".Timer")
@@ -86,12 +87,15 @@ function restart (){
                 document.querySelector('.openingWindow').style.display = 'none'
                 if(dbtn.innerText == 'Hard'){
                     generateSudoku(24)
+                    DificultyLevel = "Hard"
                 }
                 if(dbtn.innerText == 'Medium'){
-                    generateSudoku(32)
+                    generateSudoku(34)
+                    DificultyLevel = "Medium"
                 }
                 if(dbtn.innerText == 'Easy'){
-                    generateSudoku(40)
+                    generateSudoku(44)
+                    DificultyLevel = "Easy"
                 }
                 timeCounter()
              }, 1000);
@@ -124,7 +128,8 @@ function reset(){
     sudokuBoard = null;
     isPencil = false;
     mistakes = 0
-    hint.resetTheProtectedVariableOnStartingNewGame()
+    hint.resetTheValueOnStartingANewGame();
+    document.querySelector('.remainHints').innerText = 3
 }         
     
 // CREATING GRIDS AND COLS    
@@ -279,7 +284,8 @@ function reset(){
             var c = classes[1][1]
             
             if(!isPencil){
-               inputValue(each.innerText,r,c)
+                  inputValue(each.innerText,r,c)
+                  checkFinished()
             }else{
                pencilMark(each.innerText)
             }
@@ -310,8 +316,12 @@ function reset(){
                   console.log(result)
                 })
                 }
+                  selectedBox.classList.add("wrong")
                   selectedBox.style.color = 'brown'
               }else{
+                  if(selectedBox.classList.contains("wrong")){
+                    selectedBox.classList.remove("wrong")
+                  } 
                   selectedBox.style.color = 'seagreen'
                   selectedBox.innerText = val
               }
@@ -352,14 +362,15 @@ function createProtectedVariable(initialValue) {
     },
     decrese: function(){
       return value--
-    }
-    resetTheProtectedVariableOnStartingNewGame: function(){
-      value = 3
+    },
+    resetTheValueOnStartingANewGame: function(){
+      return value = 3
     }
   };
 }
-const hint = createProtectedVariable(3)
+
 document.querySelector('.hint').addEventListener('click',(e)=>{
+     if(selectedBox.innerHTML == "" ||selectedBox.classList.contains("wrong") || selectedBox.classList.contains("pencilGrid")){
       if(hint.getValue() > 0){
         hint.decrese()
         document.querySelector('.remainHints').innerText = hint.getValue()
@@ -367,25 +378,30 @@ document.querySelector('.hint').addEventListener('click',(e)=>{
       }else{
         popUp("You ran out of hints")
       }
-    })
-    
-    function showHint(){
-      var showOn;
-      var i = Math.floor(Math.random() * 9);
-      var j = Math.floor(Math.random() * 9);
-      var hintBox = document.querySelector(`.R${i}.C${j}`)
-      if(hintBox.innerHTML !== ""){
-        showHint();
-      }else{
-        hintBox.innerText = sudokuBoard[i][j]
-        hintBox.style.backgroundColor = 'seagreen'
-        setTimeout(function() {
-          hintBox.style.backgroundColor = ''
-          hintBox.innerHTML = ''
-        }, 2000);
-        console.log(hintBox)
-      }
+    }else{
+        popUp("selectedBox and try for hint")
     }
+ })
+    
+function showHint(){
+        if(selectedBox.classList.contains("pencilGrid")){
+          selectedBox.classList.remove("pencilGrid")
+          selectedBox.style.display = "flex"
+        }
+        
+        var i = selectedBox.classList[0][1];
+        var j = selectedBox.classList[1][1];
+        selectedBox.innerText = sudokuBoard[i][j]
+        selectedBox.style.backgroundColor = 'seagreen'
+        selectedBox.style.color = ''
+        selectedBox.style.scale = '1.05'
+        var box = selectedBox
+        setTimeout(function() {
+          box.style.backgroundColor = ''
+          box.style.scale = '1'
+          box.innerHTML = ''
+        }, 2000);
+}
     
   //  FUNCTION FOR PENCILS MARKS , IT WILL BE CALLED AFTER ON CLICKING TO THE INPUT BTNS AND SELECTED BOXES 
     function pencilMark(val){
@@ -439,13 +455,26 @@ document.querySelector('.hint').addEventListener('click',(e)=>{
            
  //check if the sudoku is solved or not 
  function checkFinished(){
-     var isFinishined = false
-     document.querySelectorAll('.box').forEach(box=>{
-         if(box.innerText == '' && !box.classList.contains('pencilGrid')){
-             
-         }
-     })
-     return true
+     var allBoxes = document.querySelectorAll('.box')
+    
+     for(let i = 0; i < allBoxes.length-1; i++){
+       if(allBoxes[i].innerHTML == "" || allBoxes[i].classList.contains("wrong")){
+         console.log("not finished yet")
+         return
+       }
+     }
+     setTimeout(function() {
+       popUp(`Finished <br>
+       Finished in : <strong>${timeElem.innerText}</strong><br>
+       Dificulty level : <strong>${DificultyLevel}</strong>`).then((result)=>{
+         ifconfirm("Press okay to start newgame").then((result)=>{
+            reset();
+            restart();
+         }).catch((result)=>{
+           console.log("cancelled")
+         })
+       })
+     }, 500);
  }
    
 
@@ -609,10 +638,11 @@ function ifconfirm(data){
 
 
 function popUp(data){
+  return new Promise((res,rej)=>{
   var elem1 = document.createElement("div");
   var elem2 = document.createElement("div");
   elem2.innerHTML = `
-  <h5>${data}</h5>
+  <p style="font-size:14px;">${data}</p>
   <div>
     <div class="okay">okay</div>
   </div>
@@ -625,5 +655,7 @@ function popUp(data){
   
   document.querySelector('.okay').addEventListener("click",()=>{
     document.querySelector('.confirmWindow').remove()
+    res(true)
+  })
   })
 }
