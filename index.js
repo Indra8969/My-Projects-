@@ -7,6 +7,11 @@ var timeoutID;
 var scrollingWithJS = false
 var prevScollVal;
 var scrollDirection;
+
+document.addEventListener("load",()=>{
+  document.querySelector("body").style.visibility = ""
+})
+
 container.addEventListener("scroll", ()=>{
   
   //changing display of th3 btns when scroll to end of the contianer or start of the container
