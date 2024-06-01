@@ -36,11 +36,12 @@ container.addEventListener("scroll", ()=>{
   //scroll with using deboucing it snaps only when the user stops scrolling on the container 
   clearTimeout(timeoutID)
   if(!scrollingWithJS){
+    console.log("scrolling with js")
     timeoutID = setTimeout(function() {
       var [minDistCard, dist] = getMinDistanceCard();
       scrollingWithJS = true
       console.log("scrolling with js")
-      container.scroll(container.scrollLeft + ( dist - container.getBoundingClientRect().x ) ,0)
+      container.scroll(container.scrollLeft + dist ,0)
       setTimeout(function() {
         scrollingWithJS = false
       }, 1000);
@@ -61,40 +62,36 @@ function getMinDistanceCard(){
   if(scrollWidth - container.scrollLeft < cards[0].getBoundingClientRect().width / 2){
     return [cards[cards.length-1], cards[cards.length-1].getBoundingClientRect().x]
   }
+  if(container.scrollLeft < cards[0].getBoundingClientRect().width / 2){
+    container.scrollTo(0,0)
+    return
+  }
   
   //logic for returning getting minDist to scroll and getting nearby element ( card )
   for(let index = 0; index < cards.length-1; index++){
-    if(cards[index].getBoundingClientRect().x > (0 - cards[index].getBoundingClientRect().width / 1.6) && cards[index].getBoundingClientRect().x < minDist){
-      if(scrollDirection == "left"){
-        minDist = cards[index].getBoundingClientRect().x
-        resultCard = cards[index]
-        i = index
-      }else{
-        i = index
-        if(cards[index+1]){
-          minDist = cards[index+1].getBoundingClientRect().x
-          resultCard = cards[index+1]
-        }else{
-          minDist = cards[index].getBoundingClientRect().x
-          resultCard = cards[index]
-        }
-      }
+    var midOfCard = (cards[index].getBoundingClientRect().x + cards[index].getBoundingClientRect().width / 2 )
+    var midOfContainer = container.getBoundingClientRect().x + (container.getBoundingClientRect().width / 2)
+    var dist = midOfContainer - midOfCard
+    if( Math.abs(dist) < minDist ){
+      minDist = dist
+      resultCard = cards[index]
+      i = index
     }
   }
-
-
-  return [resultCard, minDist];
+  return [resultCard, -minDist];
 }
 
 //eventListener on the 2 btns which is used for manual scroll 
 buttons.forEach((btn,i) =>{
   btn.addEventListener("click",(e)=>{
     if(!i){
+      //left scroll onclick
       if(container.scrollLeft > 0){
-       container.scrollTo(container.scrollLeft - cards[0].getBoundingClientRect().width,0)
-      }
+         container.scrollTo(container.scrollLeft - ( cards[0].getBoundingClientRect().width)  ,0)
+       }
     }else{
-      container.scrollTo(container.scrollLeft + cards[0].getBoundingClientRect().width,0)
+      //right scroll onclick
+      container.scrollTo(container.scrollLeft + ( cards[0].getBoundingClientRect().width) ,0)
       buttons[0].style.display = "flex"
     }
   })
@@ -103,6 +100,8 @@ buttons.forEach((btn,i) =>{
 
 projectsButtons.forEach(btn=>{
   btn.addEventListener("click",()=>{
-    window.location.href = btn.querySelector("a").href
+    setTimeout(function() {
+      window.location.href = btn.querySelector("a").href
+    }, 250);
   })
 })
