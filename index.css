@@ -138,6 +138,7 @@ body {
   border: 1px solid transparent;
 }
 .card .bottom a{
+  pointer-events: none;
   color: white;
   font-family: Poppins;
   font-size: .75rem;
