@@ -14,6 +14,7 @@ body {
     margin: 0;
     background-color: #2a2726;
     padding: 10px 0px;
+    visibility: none;
 }
 .main{
   width: 100vw;
