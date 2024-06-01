@@ -6,13 +6,8 @@
 }
 body {
     user-select: none;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    height: 100dvh;
     background-color: #2a2726;
-    padding: 10px 0px;
     visibility: none;
 }
 .main{
@@ -21,6 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 .wrapper{
     width: 90%;
