@@ -103,8 +103,6 @@ buttons.forEach((btn,i) =>{
 
 projectsButtons.forEach(btn=>{
   btn.addEventListener("click",()=>{
-    setTimeout(function() {
-      window.location.href = btn.querySelector("a").href
-    }, 250);
+    window.location.href = btn.querySelector("a").href
   })
 })
