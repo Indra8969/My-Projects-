@@ -1,0 +1,186 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+  font-weight: 300;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+  height: 100dvh;
+}
+.main{
+  width: 100vw;
+  max-width: 500px;
+  min-height: 100%;
+  padding: 40px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  background-color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game{
+  width: 80vmin;
+  background-color: #202020;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.board{
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gridBox{
+  width: calc(100%/3);
+  aspect-ratio: 1;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  animation: fade 1s ease 1;
+}
+.gridBox:nth-child(3n+1){
+  border-right: 5px solid grey;
+}
+.gridBox:nth-child(3n+2){
+  border-right: 5px solid grey;
+}
+.gridBox:nth-child(3n+1){
+  border-bottom: 5px solid grey;
+}
+.gridBox:nth-child(1),
+.gridBox:nth-child(2),
+.gridBox:nth-child(3),
+.gridBox:nth-child(4),
+.gridBox:nth-child(5),
+.gridBox:nth-child(6){
+  border-bottom: 5px solid grey;
+}
+.gridBox:nth-child(7){
+  border-bottom: 0px solid white;
+}
+
+.details{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  color: white;
+  margin-bottom: 20px;
+}
+.details div{
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+.details div:nth-child(2){
+  justify-content: center;
+}
+.middle h4{
+  background-color: white;
+  padding: 10px 17.5px;
+  border-radius: 30px;
+  color: black;
+}
+.details div:nth-child(3){
+  justify-content: flex-end;
+}
+.gridBox .circle{
+  width: 50%;
+  aspect-ratio: 1;
+  background-color: #c0c0c0;
+  border-radius: 50%;
+  position: relative;
+  animation: fade 0.1s linear 1;
+}
+@keyframes fade{
+  0%{
+    opacity: 0;
+    scale: 0.5;
+  }100%{
+    opacity: 1;
+    scale: 1;
+  }
+}
+.gridBox .circle:after{
+  content: "";
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.gridBox .cross{
+  width: 57.5%;
+  height: 5%;
+  background-color: #c0c0c0;
+  rotate: 45deg;
+  position: relative;
+  animation: fade 0.1s linear 1;
+}
+.gridBox .cross:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #c0c0c0;
+  rotate: -90deg;
+  position: absolute;
+  top: 0; left: 0;
+}
+.head{
+  padding-bottom: 20px;
+  color: white;
+  margin-inline: auto;
+}
+
+.popUpWrapper{
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  background-color: transparent;
+  display: none;
+  justify-content: center;
+}
+.popUp{
+  width: 200px;
+  background-color: #2d2d2d;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.popUp .top{
+  margin-bottom: 20px;
+}
+.popUp .bottom{
+  width: 100%;
+  display: flex;
+}
+.popUp .bottom button{
+  width: 100%;
+  height: 40px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  transition: background-color 0.15s linear;
+}
+.popUp .bottom button:active{
+  scale: 1.05;
+  background-color: #18152f;
+}
+.popUp .bottom button:nth-child(1){
+  margin-right: 10px;
+}
+.popUp .bottom button:nth-child(2){
+  margin-left: 10px;
+}
