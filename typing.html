@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3c3c3c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+    <style type="text/css" media="all">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins=Poppins&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+  transition: all 0.1s ease;
+  user-select: none;
+}
+:root{
+  --mainBG: rgb(255, 255, 255);
+  --testBG: rgb(233, 245, 249);
+  --color: black;
+  --headColor: rgb(65, 65, 123);
+  --defaultColor: rgb(161, 161, 161);
+  --correctColor: rgb(0, 0, 0); 
+  --incorrectColor: rgb(255, 0, 0);
+  --fontconwrapBG: rgba(73, 72, 72, 0.7);
+  --fontconBG: rgb(233, 245, 249);
+  --fontcondivBG: white;
+}
+.darkTheme{
+  --mainBG: #000000dc;
+  --testBG: #3a3939dc;
+  --color: white;
+  --headColor: orange;
+  --defaultColor: grey;
+  --correctColor: white; 
+  --incorrectColor: rgb(180, 46, 46);
+  --fontconwrapBG: rgba(46, 46, 46, 0.8);
+  --fontconBG: rgb(73, 73, 73);
+  --fontcondivBG: rgb(41, 40, 40);
+}
+body{
+  background-color: var(--mainBG);
+  min-height: calc(100dvh - 20px);
+  font-weight: 400;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color);
+  overflow-x: scroll;
+}
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header span{
+  font-size: 25px;
+}
+.headRight{
+  z-index: 5;
+}
+h1{
+  text-align: left;
+  font-family: "Poppins";
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+  transition: color 0.2s linear;
+  font-size: 30px;
+  text-decoration: undre-line;
+  color: var(--headColor);
+}
+
+.test{
+  background-color: var(--testBG);
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin: 0px 0px 30px 0px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.span{
+  color: var(--defaultColor);
+  display: inline-block;
+  text-align: center;
+  transition: left 0.1s linear;
+}
+.spanC{
+  color: var(--correctColor);
+  display: inline-block;
+  text-align: center;
+  transition: left 0.1s linear;
+}
+.spanI{
+  color: var(--incorrectColor);
+  display: inline-block;
+  text-align: center;
+  transition: left 0.1s linear;
+}
+.inputContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 30px;
+  backdrop-filter: blur(0px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+input{
+  background-color: var(--color);
+  color: var(--mainBG);
+  width: 220px;
+  height: 40px;
+  outline: none;
+  opacity: 1;
+  position: fixed;
+  border: 0px solid black;
+  border-radius: 20px;
+  position: fixed;
+  text-align: center;
+  transform: translate(0%, 0);
+  transition: all 0 s linear;
+  z-index: 2;
+  font-size: 9px;
+  transition: font-size 0.1s linear;
+}
+input:hover{
+  font-size: 9.5px;
+}
+ 
+.next{
+  margin: 30px 0px 30px 0px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.1s linear;
+  color: var(--color);
+  border: 0.5px solid var(--color);
+  z-index:5;
+}
+.next:hover{
+  background-color: var(--headColor);
+  color: var(--mainBG);
+}
+.nextActive{
+  background-color: var(--headColor);
+  color: white;
+}
+.text{
+  color: white;
+  font-family: "Poppins";
+  font-weight: 0;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  filter: blur(1px);
+}
+.text h4{
+  text-align: left;
+}
+.character{
+  width: 100px;
+  transition: all 20 ease;
+  font-size: 25px;
+  padding: 1px;
+}
+.result {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 30px;
+  backdrop-filter: blur(1px);
+  margin-inline: auto ;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 35px 0px 35px 50px;
+}
+.word{
+  margin: 0px 5px;
+  transition: all 0.1s linear;
+}
+
+.border{
+  background-color: var(--headColor);
+  width: 1px;
+  z-index: 5;
+  position: fixed;
+  left: 0px;
+  transition: all 0.5 linear;
+}
+select{
+  color: var(--color);
+  outline: none;
+  width: 100px ;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: "Roboto Mono";
+}
+
+
+.text h4{
+  text-align: center;
+  width: 100%;
+}
+
+.load{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(20px);
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.result div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin: 0px auto;
+  font-size: 14px;
+  color: var(--color);
+}
+.result div span{
+  width: 100%;
+}
+.high{
+ color: var(--headColor );
+ width: 100%;
+}
+.result div span:nth-child(1){
+  text-align: left;
+  padding-right: 10px;
+}
+.fontSize{
+  width: 150px;
+  height: 40px;
+  background-color: var(--fontcondivBG);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 7.5px;
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  font-size: 12px;
+  z-index: 10;
+  border: 0.5px solid grey;
+}
+.fontSize:hover{
+  background-color: var(--headColor);
+  color: var(--mainBG);
+}
+.fontContainerWrapper{
+  background-color: var(--fontconwrapBG);
+}
+.fontContainer{
+  background-color: var(--fontconBG);
+  transition: all 0.5s ease;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  overflow-y: scroll;
+  padding: 5px;
+  border-radius: 20px;
+  transform: translateY(1px);
+  transition: height 0.1s linear;
+}
+.fontContainer::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+.fontContainer div{
+  background-color: var(--fontcondivBG);
+  padding: 5px;
+  font-family: "Poppins";
+  margin: 2px;
+}
+.fontContainer div:nth-child(1){
+  border-radius: 15px 15px 0px 0px;
+}
+.fontContainer div:nth-last-child(1){
+  border-radius: 0 0 15px 15px;
+}
+.fontContainerWrapper{
+  width: 100vw;
+  height: 100dvh;  
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.blink{
+  transition: opacity 1s linear;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.theme{
+  width: 150px;
+  height: 40px;
+  background-color: var(--fontcondivBG);
+  border-radius: 10px;
+  padding: 5px;
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  font-size: 12px;
+  border: 0.5px solid grey;
+}
+.theme:hover{
+  background-color: var(--headColor);
+  color: var(--mainBG);
+}
+.settingWindow{
+  width: 100vw;
+  height: 100dvh;
+  background-color: var(--fontconwrapBG);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.settingMenu{
+  background-color: var(--fontconBG);
+  padding: 20px;
+  border-radius: 20px;
+}
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+    </style>
+    <title></title>
+  </head>
+  
+    
+    <div class="border"></div>
+    
+    <div class="test">
+     
+      <div class="inputContainer">
+        <input type="text/submit/hidden/button/image" placeholder="Click OR press space to continue" autocapitalize="none" name="" id="" value="" />
+      </div>
+     
+      <div class="header">
+        <h1>Typing Test</h1>
+        <div class="headRight">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+      </div>
+     
+        
+      <div class="text">
+
+      </div>
+      
+    <div class="next">
+      <span class="material-symbols-outlined">navigate_next</span>
+    </div>
+   
+    
+
+  </div>
+
+  <div class="fontContainerWrapper">
+   <div class="fontContainer">
+      <div class="FS" >14px</div>
+      <div class="FS" >15px</div>  
+      <div class="FS" >16px</div>
+      <div class="FS" >17px</div>
+      <div class="FS" >18px</div>
+      <div class="FS" >19px</div>
+      <div class="FS" >20px</div>
+      <div class="FS" >21px</div>
+      <div class="FS" >22px</div>
+      <div class="FS" >23px</div>
+      <div class="FS" >24px</div>
+      <div class="FS" >25px</div>
+      <div class="FS" >26px</div>
+      <div class="FS" >27px</div>
+      <div class="FS" >28px</div>
+      <div class="FS" >29px</div>
+      <div class="FS" >30px</div>
+      <div class="FS" >31px</div>
+      <div class="FS" >32px</div>
+   </div>
+  </div>
+  <div class="settingWindow">
+    <div class="settingMenu">
+      <div class="fontSize">
+        Font Size
+      </div>
+      <div class="theme">Change Theme</div>
+    </div>
+</div>  
+    
+    <script type="text/javascript" charset="utf-8">
+     
+const paragraph = [
+  "It is smart to have a deep appreciation for economic and investing history. History helps us calibrate our expectations, study where people tend to go wrong, and offers a rough guide of what tends to work. But it is not, in any way, a map of the future.",
+  "While the cat lazily stretches, I grab my favorite book and settle down beside her, losing myself in the magical world of stories and adventures.",
+  "How many projects and events occurred in the 20th century? Billions, trillions-who knows. But those eight alone impacted the world orders upon orders of magnitude more than others.",
+  "The majority of whats happening at any given moment in the global economy can be tied back to a handful of pastevents that were nearly impossible to predict.",
+  "One of Graham's criteria instructs conservative investors to avoid stocks trading for more than 1.5 times book value. If you followed this rule over the last decade you would have owned almost nothing but insurance and bank stocks. There is no world where that is OK.",
+  "In the tranquil waters of the nearby pond, colorful fish gracefully glide, their movements mesmerizing to behold. Sometimes, I sit by the water's edge, observing these aquatic wonders as they dart and swirl, a serene spectacle that never fails to captivate my imagination.",
+  "Whenever my baby sister giggles, her infectious laughter fills the room, bringing smiles to everyone's faces.",
+  "I love nothing more than to playfully tickle her, eliciting those delightful peals of joy that echo throughout the house, reminding us all of the simple yet profound happiness found in moments of pure, unbridled laughter.",
+  "The aroma of freshly baked cookies filled the kitchen. Lucy licked her lips in anticipation.",
+  "Fluffy clouds drifted lazily across the cerulean sky. A gentle breeze rustled the leaves in the trees.",
+  "The puppy chased its tail in playful circles, its short legs a blur of motion.",
+  "Sarah carefully watered the vibrant flowers in her window box. Each blossom held a splash of color.",
+  "The rhythmic click-clack of the typewriter filled the room as Michael diligently wrote his report.",
+  "The beach was a haven of tranquility. Soft waves lapped at the shore, and seagulls soared overhead.",
+  "Benjamin enjoyed reading under the shade of a large oak tree. The book transported him to a world of adventure.",
+  "The concert hall buzzed with excitement as the audience awaited the performance. The musicians took their places on stage.",
+  "The aroma of freshly brewed coffee filled the cafe. People chatted and laughed as they enjoyed their morning routine.",
+  "The cozy cabin nestled amongst the towering pines. Smoke curled from its chimney, promising warmth and comfort.",
+  "The sun was setting over the hills. The sky turned a beautiful shade of orange. Birds were flying back to their nests. The day was coming to an end. Everything looked peaceful and calm.",
+  "It was a bright and sunny day. Children were playing in the park. The sound of laughter filled the air. People were walking their dogs. It was a perfect day to be outside.",
+  "The cat sat by the window. It watched the birds in the garden. Its tail twitched with excitement. The birds sang sweetly. The cat enjoyed the view.",
+  "She opened the book and started reading. The story was very interesting. She lost track of time. Soon, it was dark outside. She decided to read one more chapter.",
+  "The coffee shop was busy. People were chatting and laughing. The aroma of fresh coffee filled the air. She found a seat by the window. It was a nice place to relax.",
+  "He went for a walk in the forest. The trees were tall and green. The sound of leaves rustling in the wind was soothing. He felt at peace. It was a great way to clear his mind.",
+  "The rain started to fall gently. The streets became wet and shiny. People opened their umbrellas. The sound of rain was calming. It was a nice change from the hot weather.",
+  "The bakery had just opened. The smell of freshly baked bread was irresistible. She bought a loaf of bread and some pastries. The bread was warm and delicious. It made her day.",
+  "The beach was quiet in the early morning. The waves gently lapped the shore. The sand was cool under her feet. She collected seashells along the way. It was a peaceful start to the day.",
+  "The movie was about to start. The lights dimmed in the theater. Everyone was excited. The screen lit up, and the story began. It was going to be an exciting evening."
+];
+
+
+var CurrentPara = ""
+var ParaWords = ""
+var typedPara = []
+var currentWord;
+var currentCharacter;
+var text = document.querySelector(".text");
+text.innerHTML= ""
+var border = document.querySelector(".border");
+var next = document.querySelector(".next");
+var inputt = document.querySelector("input");
+var fontSize = document.querySelector(".fontSize");
+var select = document.querySelector("select");
+var inputContainer = document.querySelector(".inputContainer");
+var j = 0;
+var k = 0;
+var t = "";
+var typing = false;
+var startTime = "";
+var endTime = "";
+var T = false;
+var value = 18
+    
+
+
+insertText();
+function insertText() {
+  var random = Math.floor(Math.random()*paragraph.length)
+  
+  CurrentPara = paragraph[random];
+  
+  var wordLength = CurrentPara.split(" ").length
+  
+  ParaWords = CurrentPara.split(" ");
+  
+  for (let i = 0; i < wordLength; i++) {
+    var word = document.createElement("div");
+    word.setAttribute("class","word");
+    text.appendChild(word);
+  }
+  
+  var words = document.querySelectorAll(".word")
+  
+  
+  
+    
+   for (let i = 0; i < words.length; i++) {
+      var char = Array.from(ParaWords[i]);
+      char.forEach((ch)=>{
+        var span = document.createElement("span");
+        span.setAttribute("class","span");     
+        span.style.fontSize = Number(value) + "px";
+        span.innerHTML = ch;
+        words[i].appendChild(span);
+      })
+    }
+    
+    border.style.left = document.querySelector(".word").getBoundingClientRect().x + "px"
+    border.style.top = document.querySelector(".word").getBoundingClientRect().y + "px"
+    
+}
+
+document.addEventListener("scroll", ()=>{
+  console.log("scrolled");
+  changeCaretPosOnChange()
+})
+
+window.addEventListener("resize", ()=>{
+  changeCaretPosOnChange()
+})
+
+
+
+function changeCaretPosOnChange(){
+  if(!currentCharacter){
+    caret(currentWord, "word")
+  }else{
+     caret(currentCharacter, "char")
+  }
+}
+
+var crrW = 0;
+var crrC = 0;
+document.addEventListener("input",(e)=>{
+  if(crrW < 0){
+    crrW = 0
+  }
+  if(crrC < 0){
+    crrC = 1
+  }
+
+  inputt.value = ""
+  inputt.value = "Click OR press space to continue "
+
+
+  var ALLWords = document.querySelectorAll(".word")
+  currentWord = ALLWords[crrW]
+
+  var AllCharacters = currentWord.childNodes
+  currentCharacter = AllCharacters[crrC]
+ 
+  var backToPreviousWord = false
+
+  //on clicking to the space select the next word
+  if(e.data == " "){
+    currentWord = ALLWords[crrW++]
+    AllCharacters = currentWord.childNodes
+    crrC = 0
+    if (crrW > ParaWords.length -1 ){
+      finished()
+    }
+  }else if(e.data == null){
+    
+      AllCharacters = ALLWords[crrW].childNodes
+      
+      if(crrC == 0){
+         crrW--
+         backToPreviousWord = true
+         currentWord = ALLWords[crrW]
+         AllCharacters = currentWord.childNodes
+         crrC = findCurrentC(AllCharacters) //find crrC on using back space and move to last crrC
+         if(caret(AllCharacters[crrC-1], "char")){
+            caret(AllCharacters[crrC-1], "char")
+         }else{
+            caret(ALLWords[crrW], "word")
+         }
+      }else{
+         crrC--  
+      }
+      
+      if(crrW > ParaWords.length - 1 ){
+        crrW = ParaWords.length -1
+      }
+
+      AllCharacters = ALLWords[crrW].childNodes
+
+      if(AllCharacters[crrC].classList.contains("extra")){
+        AllCharacters[crrC].remove()
+      }
+      if(AllCharacters[crrC]){
+        if(!backToPreviousWord){
+          AllCharacters[crrC].classList.contains("spanI") ? AllCharacters[crrC].classList.remove("spanI") : AllCharacters[crrC].classList.remove("spanC");
+        }
+      }
+  }else{
+    if(!currentCharacter){
+      ALLWords[crrW].innerHTML += `<span class="span spanI extra" style="font-size:${value}px; color: rgb(118, 45, 45);">${e.data}</span>`
+      crrC++
+      AllCharacters = ALLWords[crrW].childNodes
+      currentCharacter = AllCharacters[crrC]
+    }else{
+      if(currentCharacter.innerText == e.data){
+        currentCharacter.classList.add("spanC")
+        crrC++
+      }
+      if(currentCharacter.innerText != e.data){
+        currentCharacter.classList.add("spanI")
+        crrC++
+      }
+    }
+  }
+      
+  if(T == false){
+    startTime = Date.now()
+   
+    T = true 
+  }
+  if(crrC == 0){
+    caret(ALLWords[crrW], "word")
+  }else{
+    caret(AllCharacters[crrC-1], "char");
+  }
+
+  if(crrW == ParaWords.length-1 && crrC == currentWord.childNodes.length){
+    setTimeout(() => {
+      finished()
+      border.style.display = "none"
+    }, 200);
+  }
+
+})
+  
+function findCurrentC(allChar){
+   let c = 0
+   for(let i = 0; i < allChar.length; i++){
+     if(allChar[i].classList.contains("spanI") || allChar[i].classList.contains("spanC")){
+       c = i+1
+     }
+   } 
+   return c
+}
+
+function fontsize(val) {
+  document.querySelectorAll("span").forEach((each,i)=>{
+    if(i !== 0){
+      each.style.fontSize = val + "px"
+      if(each.classList.contains("extra")){
+        each.style.fontSize = value * 2/3 + "px"
+      }
+    }
+  })
+  border.style.transition = "all 0s  linear"
+  if(!currentCharacter){
+    if(!currentWord){
+      currentWord = document.querySelector('.word')
+      caret(currentWord, "word")
+    }else{
+      caret(currentWord, "word")
+    }
+  }else{
+     caret(currentCharacter, "char")
+  }
+  border.style.transition = "all 0.09s linear"
+
+}
+fontsize(value)
+
+
+var openTImeID;
+document.querySelector(".fontSize").addEventListener("mouseenter",(e)=>{
+  openTImeID = setTimeout(() => {
+    openFontContainer()
+  }, 350);  
+})
+
+document.querySelector(".fontSize").addEventListener("mouseleave",(e)=>{
+  clearTimeout(openTImeID)
+})
+
+document.querySelector(".fontSize").addEventListener("click",(e)=>{
+  openFontContainer()
+})
+ 
+document.querySelector(".fontContainer").addEventListener("mouseleave",(e)=>{
+   closeFontContainer()
+})
+
+document.querySelector(".fontContainerWrapper").addEventListener("click",(e)=>{
+   closeFontContainer()
+})
+
+function openFontContainer(){
+  
+    document.querySelector(".fontContainerWrapper").style.display = "flex"
+    document.querySelector(".fontContainer").style.height = "50px"
+    setTimeout(() => {
+      document.querySelector(".fontContainer").style.height = "250px"   
+    }, 10);    
+  
+}
+
+function closeFontContainer(){
+  document.querySelector(".fontContainer").style.height = "50px"
+   setTimeout(() => {
+    document.querySelector(".fontContainerWrapper").style.display = "none"
+   }, 100);
+}
+
+document.querySelectorAll(".FS").forEach((eh)=>{
+  eh.addEventListener("click",()=>{
+    var v = Array.from(eh.innerHTML)
+    value = v[0] + v[1]
+    fontsize(value)
+    open = false
+    !currentCharacter ? caret(currentWord,"word") : caret(currentCharacter,"char") ;
+  })
+})
+
+
+next.addEventListener("click",()=>{
+  nextTest()
+} )
+
+document.addEventListener("keyup",(e)=>{
+  if(e.key == "Enter"){
+    nextTest()
+    next.classList.add("nextActive")
+
+    setTimeout(() => {
+      next.classList.remove("nextActive")
+    }, 200);
+  }
+})
+
+function nextTest(){
+  fontSize.style.display = "flex"
+  crrC = 0
+  crrW = 0   
+  currentCharacter = ""
+  currentWord = ""
+  typedPara = []
+  typing = false;
+  startTime = "";
+  endTime = "";
+  T = false;
+  inputt.value = "";
+  text.innerHTML = "";
+  inputt.style.display = "block"
+  text.querySelectorAll(".word").forEach((each)=>{
+    each.remove();
+  })
+  insertText();
+  border.style.display = "inline-block"
+  inputt.blur()
+  caret(document.querySelector(".word"),"word")
+  blur()
+}
+ 
+
+
+var timeoutId;
+function caret(target, type){
+ 
+  clearTimeout(timeoutId)
+  border.classList.toggle("blink")
+  timeoutId = setTimeout(() => {
+    border.classList.add('blink')
+  }, 1000);
+
+   border.style.height = value + "px"
+
+ if(type == "word"){
+   border.style.left = target.getBoundingClientRect().x + "px"
+   border.style.top = target.getBoundingClientRect().y + ((target.getBoundingClientRect().height - value)/2) + "px"
+   inputt.style.top = ( target.getBoundingClientRect().y - inputContainer.getBoundingClientRect().y ) + "px"  
+ }
+ if (type == "char"){
+   border.style.left = target.getBoundingClientRect().x + target.getBoundingClientRect().width + "px"
+   border.style.top = target.getBoundingClientRect().y + ((target.getBoundingClientRect().height - value)/2)+ "px"
+   inputt.style.top = ( target.getBoundingClientRect().y - inputContainer.getBoundingClientRect().y ) + "px"
+ }
+}
+
+
+function finished() {
+  
+  j = 0
+  k = 0
+  fontSize.style.display = "none"
+  
+  inputt.style.display = "none"
+  border.style.display = "none"
+  crrt();
+  
+  endTime = Date.now();
+  //border.style.display = "none"
+ 
+ 
+ 
+  var words = document.querySelectorAll(".word");
+  var NumberOfWords = words.length;
+  var NumberOfCharaters = ""
+  var correctWords = document.querySelectorAll(".correct")
+  var correctCharacters = document.querySelectorAll(".spanC")
+  
+  words.forEach((wk)=>{
+   
+  })
+  
+  function count(){
+    var count = 0
+    words.forEach((w)=>{
+      w.childNodes.forEach((n)=>{
+       return count++
+      })
+    })
+    NumberOfCharaters = count
+  };
+  count();
+  
+  text.innerHTML = "";
+  text.innerHTML += resultGenerator(NumberOfCharaters,NumberOfWords,words,correctWords,correctCharacters)
+   
+  inputt.blur()
+  focus()
+}
+function resultGenerator(NumberOfCharaters,NumberOfWords,words,correctWords,correctCharacters){
+  return(
+       `<div class="result">
+           <div/><span>Accuracy (word)  </span><span class="high">${((correctWords.length/NumberOfWords) *100).toFixed(2)}%</span></div>
+           <div/><span>Accuracy (characters)  </span><span class="high">${((correctCharacters.length/NumberOfCharaters) *100).toFixed(2)}%</span></div>
+           <div><span>Time Taken </span><span class="high">${((endTime-startTime-(200))/1000).toFixed(1)} s</span> </div>
+           <div><span>WPM</span> <span class="high">${Math.floor(correctWords.length / (((endTime - startTime)/1000)/60))}</span></div>
+           <div><span>Raw WPM </span> <span class="high">${Math.floor(NumberOfWords / (((endTime - startTime)/1000)/60))}</span> </div>
+           <div><span>Words</span><span class="high">${correctWords.length}/${NumberOfWords}</span></div>
+           <div><span>Characters </span> <span class="high">${correctCharacters.length}/${NumberOfCharaters}</span></div>
+       </div>`
+    )
+}
+
+function crrt() {
+   var words = document.querySelectorAll(".word");
+   
+   words.forEach((w)=>{
+     var CountOfCorrect = 0;
+     var CountOfIncorrect = 0;
+     var Characters = w.childNodes
+      
+      Characters.forEach((ch)=>{
+        if(ch.classList.contains("spanC")){
+          CountOfCorrect++
+        }else if(ch.classList.contains("spanI")){
+          CountOfIncorrect++
+        }else{
+          CountOfIncorrect++
+        }
+      })
+      
+      if(CountOfIncorrect == 0){
+        w.classList.add("correct")
+      }else{
+        w.classList.add("incorrect")
+        
+      }    
+          
+   })
+    
+      
+}
+
+
+document.addEventListener("keyup",(e)=>{
+  if(e.key==" "){
+    focus()
+  }
+})
+
+inputt.addEventListener("focus",()=>{
+   focus()
+})
+
+  
+inputt.addEventListener("blur",()=>{
+    blur()
+})
+
+function blur(){
+    inputt.blur()
+    inputContainer.style.opacity = "1"
+    inputContainer.style.zIndex = "5"
+    //inputContainer.style.backdropFilter = "blur(2.5px)"
+    text.style.filter = "blur(1px)"
+}
+function focus(){
+    inputt.focus()
+    inputContainer.style.opacity = "0"
+    inputContainer.style.zIndex = "-5"
+    //inputContainer.style.backdropFilter = "blur(0px)"
+    text.style.filter = "blur(0px)"
+}
+
+document.querySelector(".headRight").addEventListener("click",(e)=>{
+  document.querySelector(".settingWindow").style.display = "flex"
+})
+
+document.querySelector(".theme").addEventListener("click",(e)=>{
+  document.querySelector("body").classList.toggle("darkTheme")
+})
+
+document.querySelector(".settingWindow").addEventListener("click",()=>{
+  document.querySelector(".settingWindow").style.display = "none"
+})
+
+
+// var meta = document.createElement('meta');
+// meta.name = "theme-color";
+// meta.content = "#3c3c3c";
+// document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+  </body>
+</html>
