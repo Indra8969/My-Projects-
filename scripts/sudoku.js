@@ -564,12 +564,9 @@ function putGeneratedValueInBoard(board, difi) {
 var isResultFound = false;
 function solveSudoku(board) {
   if (!isResultFound) {
-    // if result is not found then continue other wise it will uses cpu power and sloves web performance
-    // console.log("count")
     const emptySpot = findEmptySpot(board);
 
     if (emptySpot == null) {
-      // Puzzle solved
       isResultFound = true;
       return true;
     }
@@ -579,20 +576,14 @@ function solveSudoku(board) {
     for (let num = 1; num <= 9; num++) {
       board[row][col] = num;
       if (isValidSudoku(board, row, col)) {
-        // Try placing the number
-
-        // Recursively try to solve the rest of the puzzle
         if (solveSudoku(board)) {
           isResultFound = true;
           return true;
         }
-
-        // If placing the number didn't lead to a solution, backtrack
         board[row][col] = ".";
       }
       board[row][col] = ".";
     }
-    // No valid number found, backtrack
     return false;
   }
   return true;
