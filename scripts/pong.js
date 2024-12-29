@@ -33,23 +33,16 @@ var score = 0;
 
 let animationId;
 startAnimation();
-// Define a global variable to store the animation ID
 
-// Function to start the animation loop
 function startAnimation() {
   function animate() {
-    // Animation logic here
     draw();
-    // Call requestAnimationFrame recursively
     animationId = requestAnimationFrame(animate);
   }
-  // Start the animation loop
   animate();
 }
 
-// Function to stop the animation loop
 function stopAnimation() {
-  // Call cancelAnimationFrame with the animation ID
   cancelAnimationFrame(animationId);
 }
 
@@ -160,9 +153,3 @@ document.addEventListener("keydown", (e) => {
     c.clearRect(stick.x - 1, stick.y, stick.width + 2, stick.height);
   }
 });
-
-// it for the stick to get smoother movements
-
-//document.addEventListener('scroll',(e)=>{
-//    e.preventDefault()
-//})
