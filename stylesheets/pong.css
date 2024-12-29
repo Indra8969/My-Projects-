@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100dvh;
+  box-sizing: border-box;
+  cursor: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas{
+  width: 90vw;
+  max-width: 750px;
+  height: 90dvh;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+h3{
+  position: fixed;
+  top: 0px;
+  left: 20px;
+}
+.cursor{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}

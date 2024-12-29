@@ -1,0 +1,313 @@
+@font-face {
+    font-family: myfont;
+    src: url("../assets/fonts/sf-pro-display_regular.woff2");
+}
+:root{
+    --shade-one: rgb(255,255,255);
+    --shade-two: rgb(240,240,240);
+    --shade-three: rgb(220,220,220);
+    --shade-four: rgb(200,200,200);
+    --color: rgb(24, 24, 24);
+}
+.dark-mode{
+    --shade-one: rgb(0, 0, 0);
+    --shade-two: rgb(35,35,35);
+    --shade-three: rgb(55,55,55);
+    --shade-four: rgb(75,75,75);
+    --color: white;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: myfont;
+    background-color: var(--shade-one);
+    color: var(--color);
+}
+.container{
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100dvh;
+    margin-inline: auto;
+}
+p::selection{
+    background-color: var(--color);
+    color: var(--shade-one);
+    border-radius: 10px;
+}
+
+.wrapper{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 7.5vmin;
+}
+.top  > div > .heading{
+    font-size: 2rem;
+}
+.top > div > .title{
+    font-size: 3rem;
+}
+.top-bottom{
+    display: grid;
+    grid-template-columns: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.top-bottom > div{
+    padding: 20px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.top-bottom > div > div{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.top-bottom > div > div > .title{
+    font-size: 1.4rem;
+}
+.top > div > div > .des{
+    padding: 20px;
+    background-color: var(--shade-two);
+    border-radius: 5px;
+    line-height: 1.5rem;
+    margin-top: 20px;
+    font-size: 1.25rem;
+    max-width: 80ch;
+}   
+.top{
+    padding: 7.5vmin;
+    display: flex;
+    justify-content: space-between;
+}
+.top > div{
+    max-width: 100%;
+}
+.top-bottom .des > span{
+    background-color: var(--shade-four);
+}
+.menu-container{
+    position: fixed;
+    top: 3vmax;
+    right: 3vmax;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    /* opacity: .25; */
+}
+.menu-container:hover{
+    opacity: 1;
+}
+.menu-icon{
+    background-color: var(--color);
+    opacity: .5;
+    color: var(--shade-one);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+.menu-icon > svg{
+    pointer-events: none;
+    background-color: inherit;
+    fill: var(--color);
+    stroke: var(--shade-one);
+}
+.menu{
+    z-index: 50;
+    display: none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color:  var(--shade-two);
+    color: var(--color);
+    padding: 10px 0px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 5px solid var(--shade-four);
+}
+.menu > div{
+    user-select: none;
+    min-width: 150px;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-wrap: nowrap;
+}
+.menu > div:hover{
+    background-color: var(--shade-one);
+}
+.menu *{
+    color: inherit;
+    background-color: inherit;
+}
+.project-title{
+    padding: 20px 7.5vmin;
+}
+.project-title > p{
+    font-size: 2.25rem;
+}
+.projects{
+    padding: 0px 7.5vmin; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100%;
+}
+.projects::-webkit-scrollbar{
+    height: 0px;
+}
+
+.card{
+    flex-basis: 300px;
+    flex-grow: 1;
+    background-color: var(--shade-two);
+    padding: 25px 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+.Resume{
+    max-height: fit-content;
+}
+.card *{
+    background-color: inherit;
+}
+.card-title{
+    font-size: 2.25rem;
+    margin-bottom: 10px;
+}
+.card-des{
+    font-size: 1.25rem;
+}
+.card-des > span{
+    background-color: var(--shade-four);
+    color: var(--color);
+}
+.card-bottom{
+    display: flex;
+    justify-content: flex-end;
+}
+.button{
+    all: unset;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.card-bottom , .card-bottom  > div{
+    background-color: inherit;
+}
+.button > span > svg{
+    background-color: inherit;
+    color: inherit;
+    fill: inherit;
+}
+.button > span{
+    height: 100%;
+    background-color: var(--color);
+    color: var(--shade-one);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    transition: transform .2s ease-in-out;
+}
+.button > span:nth-child(2){
+    background-color: var(--shade-one);
+    color: var(--color);
+}
+.button:hover > span{
+    transform: translateY(-100%);
+}
+.button:active > span{
+    transform: translateY(-120%);
+}
+.top-bottom .button{
+    max-width: fit-content;
+}
+
+
+.float-window-wrapper{
+    z-index: 3;
+    background-color: var(--shade-three);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: none;
+    padding: 10px;
+}
+.float-window{
+    height: fit-content;
+    max-width: 100%;
+    border-block: 1px solid var(--shade-three);
+    border-inline: 1px solid var(--shade-three);
+    border-radius: 15px;
+    padding: 25px 0px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    margin-block: auto;
+    gap: 20px;
+}
+.float-top{
+    padding-inline: 25px;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.float-window .float-window-title{
+    font-size: 2rem;
+}
+.float-window .float-window-cards{
+    padding-inline: 25px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+.float-window .float-window-cards::-webkit-scrollbar{
+    height: 0px;
+}
+.close-window{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--shade-two);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close-window > svg{
+    background-color: inherit;
+}
+.float-window .card{
+    border-radius: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 275px;
+}
+
+@media (width < 600px){
+    html{
+        font-size: 14px;
+    }
+}
+@media (width > 1000px){
+    .float-window{
+        max-width: 950px;
+    }
+}

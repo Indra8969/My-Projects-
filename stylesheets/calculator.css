@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "googlesans";
+  transition: all linear 0.15s;
+}
+:root {
+  --pri-clr: #0c0c0c;
+  --sec-clr: rgb(45,45,45);
+  --btn-clr: #0d0d0d;
+  --white: white;
+  --input-clr: #0d0d0d;
+}
+.lightMode{
+  --pri-clr :  #fff;
+  --sec-clr :  rgb(200,200,255);
+  --btn-clr :  rgb(255,255,255);
+  --white : black;
+  --input-clr : white;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100dvh;
+  background-color: var(--pri-clr);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.calc {
+  width: 200px;
+  background-color: var(--sec-clr);
+  border-radius: 10px;
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 1px 40px 30px rgba(0, 0, 0, 0.2);
+  margin: 0px 0px 50px 0px;
+}
+button {
+  height: 45px;
+  width: 45px;
+  margin: 5px 2px;
+  border-radius: 50%;
+  border: 0px;
+  background-color: var(--btn-clr);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  color: var(--white);
+}
+button:nth-child(4n-2) {
+  font-size: 20px;
+}
+.inputDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 10px;
+  z-index: 2;
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+}
+.inputDiv span {
+  width: 10%;
+  margin: auto;
+  padding: 5px 10px;
+  color: var(--white);
+}
+input {
+  outline: none;
+  width: 100%;
+  height: 45px;
+  background-color: var(--input-clr);
+  border-radius: calc(45px / 2);
+  border: 0px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.05);
+  padding: 0px 20px 0px 10px;
+  text-align: right;
+  font-size: 14px;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+input::placeholder {
+  color: grey;
+}
+
+.main h2 {
+  font-size: 25px;
+  margin: 40px;
+  opacity: 1;
+  color: var(--white);
+}
+hr {
+  margin-top: 20px;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: grey;
+  position: relative;
+  bottom: 10px;
+  opacity: 0.1;
+  margin: 10px 0px;
+}
+
+.inputtwo {
+  display: none;
+}
+#per {
+  display: none;
+}
+.colorMode {
+  height: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+}
+.colorMode span {
+  color: var(--white);
+}
+.back span {
+  transform: translate(-0.75px, 2px);
+}
+.copy {
+  font-size: 20px;
+}

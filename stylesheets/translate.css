@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "System-ui";
+}
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 20px;
+}
+.main {
+  padding: 30px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.15);
+  margin-inline: auto;
+}
+input {
+  height: 40px;
+  outline: none;
+  background-color: #f0f0f087;
+  border: 0px;
+  border-radius: 7.5px;
+  padding: 5px 10px;
+}
+input:focus{
+  outline: 1px solid grey;
+}
+h3 {
+  margin: 15px 0px;
+  color: grey;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+}
+h4 {
+  color: #454545;
+  width: 100%;
+  min-height: 25px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 3px;
+  animation-name: load;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  font-size: 0.8rem;
+  transition: all linear 3s;
+  font-family: "Baloo Bhai 2";
+  text-align: justify;
+  text-indent: 25px;
+}
+@keyframes load {
+  0% {
+    opacity: 0.5;
+    background-color: #c4c4c4;
+  }
+  50% {
+    background-color: #c4c4c4;
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+    background-color: #c4c4c4;
+  }
+}
+.language {
+  widows: 100%;
+  display: flex;
+  margin: 20px 0px 0px 0px;
+}
+.language h4 {
+  width: 80px;
+  text-align: center;
+  animation-name: --;
+  background-color: transparent;
+  border: 0px solid black;
+}
+select {
+  width: 100%;
+  margin: 0px 5px;
+  outline-color: navy;
+  outline: none;
+  border: 0.5px solid Black;
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 0px 0px 0px 5px;
+  height: 30px;
+}

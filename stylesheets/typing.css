@@ -1,0 +1,189 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+}
+:root{
+  --shade-one: white;
+  --shade-two: rgb(216, 216, 216); 
+  --shade-three: rgb(177, 177, 177);
+  --secondary: aliceblue;
+  --color: black;
+  --incorrect: brown;
+  --correct: black;
+  --default: var(--shade-three);
+}
+.darkTheme{
+  --shade-one: black;
+  --shade-two: rgb(46, 46, 46); 
+  --shade-three: rgb(66, 66, 66);
+  --secondary: rgb(27, 27, 27);
+  --color: white;
+  --incorrect: brown;
+  --correct: white;
+  --default: rgb(156, 156, 156);
+}
+body{
+  color: var(--color);
+}
+.settingWindow{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  z-index: 2;
+}
+.settingContainer{
+  padding: 10px;
+  border-radius: 20px 10px 20px 20px;
+  width: fit-content;
+  margin-inline: auto;
+  background-color: var(--shade-two);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.settingContainer > .item > select{
+  height: 30px;
+  width: 100%;
+  outline: none;
+  background-color: var(--shade-one);
+  color: var(--color);
+  border: 1px solid var(--shade-one);
+  padding: 0px 5px;
+  border-radius: 20px;
+}
+.settingClose{
+  all: unset;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.settingClose > svg{
+  padding: 2px;
+  background-color: var(--shade-two);
+  border-radius: 50%;
+}
+.settingClose:hover > svg{
+  background-color: var(--shade-one);
+}
+.container {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--shade-one);
+}
+.wrapper {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 30px;
+  border: 1px solid var(--shade-three);
+  border-radius: 10px;
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--secondary);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.top div:nth-child(2) {
+  display: flex;
+  gap: 5px;
+}
+.top div:nth-child(2) > div > svg{
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  display: flex;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  pointer-events: none;
+}
+.testContainer {
+  padding: 20px 0px;
+}
+.test {
+  user-select: none;
+  color: var(--color);
+}
+.test letter {
+  font-weight: 600;
+}
+.testContainer input {
+  all: unset;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 40px;
+  padding: 0px 20px;
+  text-align: center;
+  width: fit-content;
+  max-width: 250px;
+  background-color: var(--shade-one);
+  color: var(--shade-two);
+  border-radius: 30px;
+  border: 1px solid black;
+  font-size: 0.8rem;
+}
+.caret {
+  position: fixed;
+  height: 1.35rem;
+  width: 2px;
+  background-color: orange;
+  transition: left .1s ease-in-out;
+}
+
+.bottom {
+  display: flex;
+}
+.bottom svg {
+  background-color: var(--shade-one);
+  width: 40px;
+  padding: 7.5px;
+  border: 1px solid var(--shade-three);
+  margin-inline: auto;
+  aspect-ratio: 1/1;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  height: 100%;
+  transition: scale .2s linear;
+}
+.bottom svg:hover{
+  background-color: var(--color);
+  color: var(--shade-one);
+  scale: .9;
+}
+.bottom svg:active{
+  scale: 1.05;
+}
+.default {
+  color: var(--default);
+}
+.correct {
+  color: var(--correct);
+}
+.incorrect {
+  color: var(--shade-one);
+  background-color: var(--incorrect);
+}
+.zero letter {
+  background-color: transparent;
+  color: transparent;
+}

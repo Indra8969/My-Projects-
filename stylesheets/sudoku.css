@@ -1,0 +1,479 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Lora";
+}
+:root{
+    --accent-color: #2e2296;
+    --back-color: #fff;
+    --back-color-land: #ffffff;
+    --default-box: #f1f1f1;
+    --highlight-color: #bccff08d;
+    --default-highlight-color: #88a7e9c3;
+    --selectedBox-color: #5e78afc3;
+    --border: #5c5c5c;
+    --border-light: rgb(167, 167, 167);
+    --color: #090909;
+    --active-B: var(--accent-color);
+    --active-C: white;
+    --actBtn-B: var(--accent-color);
+    --actBtn-C: white;
+    --Btn-B: #fff;
+    --Btn-C: #000;
+    --NG-B: var(--accent-color);
+    --NG-C: #fff;
+    --DFB: #ececec;
+    --OPWB: rgba(0,0,0,0.15);
+}
+.darkTheme{
+    --back-color: #202020;
+    --back-color-land: #2323239d;
+    --default-box: #000000;
+    --border: #d4d4d4;
+    --border-light: rgb(90, 90, 90);
+    --highlight-color: #356bc88d;
+    --default-highlight-color: #193775;
+    --selectedBox-color: #0f234d;
+    --active-B: #dadada;
+    --active-C: black;
+    --Btn-B: #000;
+    --Btn-C: #dadada;
+    --actBtn-B: #dadada;
+    --actBtn-C: #000;
+    --color: #dadada;
+    --NG-B: #dadada;
+    --NG-C: #000;
+    --DFB: #000;
+    --OPWB: rgba(0,0,0,0.8);
+}
+
+body{
+    overflow-x: scroll;
+    user-select: none;
+    background-color: var(--back-color);
+    color: var(--color);
+    transition: background-color 0.2s linear;
+}
+.confirmWindow{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  background-color: var(--OPWB);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.confirm{
+  width: 175px;
+  padding: 10px;
+  border-radius: 5px;
+  backdrop-filter: blur(50px);
+  background-color: var(--back-color);
+}
+.confirm div{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 3.5px;
+}
+.confirm div div{
+  width: 100%;
+  height: 30px;
+  background-color: var(--DFB);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.box span{
+    color: var(--color);
+}
+.highlight{
+    background-color: var(--highlight-color);
+}
+.selectedBox{
+    background-color: var(--selectedBox-color);
+}
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    padding: 20px 0px;
+}
+.right{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.themeBtn{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NG-B);
+    color: var(--NG-C);
+    border-radius: calc(7.5rem/2);
+    transition: transform 0.1s linear;
+    margin-right: 10px;
+}
+.themeBtn span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right .newGame{
+    width: 7rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NG-B);
+    color: var(--NG-C);
+    border-radius: calc(7.5rem/2);
+    transition: transform 0.1s linear;
+}
+.newGame:active{
+    background-color: #000;
+    color: #fff;
+    transform: translate(-5px,0px);
+}
+.head h1{
+   font-size: 2rem;   
+}
+.bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    width: 100%;
+    min-width: 320px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-inline: auto;
+    padding: 0px calc(100vw /15);
+}
+.grid{
+    width: 100%;
+    border: 1px solid var(--border);
+}
+.grid div{
+  display: flex;
+}
+.grid div div{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: .5px dotted var(--border-light);
+    color: var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+.default{
+    background-color: var(--default-box);
+}
+.default.highlight{
+    background-color: var(--default-highlight-color);
+}
+.default.selectedBox{
+    background-color: var(--selectedBox-color);
+}
+.grid div div:nth-child(3){
+    border-right: 1px solid var(--border);
+}
+.grid div div:nth-child(6){
+    border-right: 1px solid var(--border);
+}
+.grid .R2{
+    border-bottom: 1px solid var(--border);
+}
+.grid .R5{
+    border-bottom: 1px solid var(--border);
+}
+
+.putValue{
+    width: 100%;
+    display: flex;
+    background-color: var(--back-color);
+    border:1px solid var(--color);
+    margin: 20px 0px;
+}
+.putValue div{
+  width: 100%; 
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--back-color);
+  margin: 0px;
+  border: .5px solid var(--border);
+}
+.putValue div:hover{
+    cursor: pointer;
+}
+.box{
+  transition: background-color 0.05s ease, scale 0.3s ease;
+}
+.box:hover{
+    cursor: pointer;
+    background-color: var(--selectedBox-color);
+    color: black;
+}
+.box span{
+    font-size: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+}
+
+.btn{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+.btn button{
+    cursor: pointer;
+}
+.btn button:hover{
+    background-color: var(--accent-color);
+    color: white;
+}
+.remainHints{
+    border-radius: 12px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--NG-B);
+    color: var(--NG-C);
+    transform: translate(6px,-6px);
+}
+.buttons button{
+    background-color: var(--Btn-B);
+    color: var(--Btn-C);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: .5px solid var(--Btn-C);
+    margin-bottom: 5px;
+    transition: background-color 0.1s linear,scale 0.1s linear;
+}
+.buttons button:active{
+    background-color: var(--actBtn-B);
+    scale: 1.05;
+    color: var(--actBtn-C);
+}
+.buttons button span{
+  font-size: 1.1rem;
+}
+.putValue div:active{
+    background-color: var(--active-B);
+    scale: 1.05;
+    color: var(--active-C);
+}
+.openingWindow{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: var(--OPWB);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10vmin);
+}
+.selectDificulty{
+    max-width: 250px;
+    background-color: var(--back-color);
+    color: var(--color);
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: translate(0,50vh);
+    transition: all 0.25s linear;
+    opacity: 0;
+    scale: 0;
+    font-size: .9rem;
+}
+.selectDificulty div div{
+    display: grid;
+    place-items: center;
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0px;
+    background-color: var(--DFB);
+    color: var(--color);
+    transition: background-color 0.2s linear;
+    font-size: .9rem;
+}
+.DbtnDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.selectDificulty div div:active{
+    background-color: var(--color);
+    color: var(--DFB);
+}
+.selectDificulty span{
+    margin-right: 10px;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+.Rules{
+    font-size: 1rem;
+    margin: 20px 0px;
+}
+.Rules h2{
+    margin-bottom: 15px;
+}
+.Rules p{
+    text-align: justify;
+    line-height: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.DetailsElem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.input:hover{
+    background-color: var(--accent-color);
+    color: white;
+}
+.cancel, .okay{
+  transition: background-color 0.2s linear;
+}
+.cancel:active,
+.okay:active{
+  background-color: var(--active-B);
+  color: var(--active-C);
+}
+
+@keyframes rotate{
+    0%{
+        animation-timing-function: linear;
+        rotate: 0deg;
+    }100%{
+        rotate: 360deg;
+    }
+}
+
+
+@media screen and (width > 700px){
+    html{
+     font-size: 16px;
+    }
+    .main{
+        min-width: 600px;
+        width: 100%;
+        max-width: 800px;
+        min-height: 100vh;
+        padding: 0px 30px;
+        background-color: var(--back-color-land);
+    }
+    .bottom{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .grid{
+        aspect-ratio: 1/1;
+        background-color: var(--back-color);
+        width: 115%;
+        margin: 50px 0px;
+        font-size: 1.15rem;
+    }
+    .controls{
+        width: 100%;
+        margin: 50px 0px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .controls .cntrl{
+        min-width: 200px;
+    }
+    .putValue{
+        min-width: 170px;
+        max-width: 100%px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .buttons{
+        max-width: 200px;
+    }
+    .buttons button span{
+        font-size: 1rem;
+    }
+    .remainHints{
+       border-radius: 9px;
+       position: absolute;
+       display: flex;
+       min-width: 18px;
+       max-width: 18px;
+       min-height: 18px;
+       max-height: 18px;
+       transform: translate(4.5px,-4.5px);
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    button{
+        max-width: 45px;
+        max-height: 45px;
+    }
+    .Rules{
+        margin-top: 0px;
+    }
+    p{
+        font-size: 0.9rem;
+
+    }
+    .DetailsElem{
+        font-size: 10px;
+    }
+}
