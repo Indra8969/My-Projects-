@@ -160,7 +160,7 @@ const cards = {
       title: "Download",
       svg: svgs.download,
     },
-    src: "./downloadable/fileShareWindows.zip",
+    src: "https://drive.google.com/file/d/1NiFJY_JPs4R2tFgmJtLCF3Av9SC42fCJ/view?usp=drive_link",
     onclick: "download",
   },
   // "React.js Projects!": {
@@ -433,7 +433,7 @@ const cards = {
       svg: svgs.download
     },
     onclick: "download",
-    src: "./downloadable/resume_updated.pdf",
+    src: "https://drive.google.com/file/d/1q6lgCNA2d72T5UjWwNw0shzyPtUzvWmw/view?usp=drive_link",
   },
 };
 Object.freeze(cards);
@@ -550,7 +550,7 @@ function changeTheme(e) {
 
 
 //event on the resumt download button on the menu : 
-resumeDownloadMenuBtn.addEventListener("click", ()=> download("./downloadable/resume_updated.pdf", "resume"))
+resumeDownloadMenuBtn.addEventListener("click", ()=> download("https://drive.google.com/file/d/1q6lgCNA2d72T5UjWwNw0shzyPtUzvWmw/view?usp=drive_link", "resume"))
 
 function sleep(ms) {
   return new Promise((res, rej) => setTimeout(() => res("Done"), ms));
