@@ -163,40 +163,40 @@ const cards = {
     src: "./downloadable/fileShareWindows.zip",
     onclick: "download",
   },
-  "React.js Projects!": {
-    type: "group",
-    title: "React.js Projects !",
-    description:
-      "React.js projects are designed with React Redux for robust state management and utilize local storage for data persistence, resulting in a highly responsive and efficient user experience.",
-    cards: [
-      {
-        title: "E-Commerce Store with React.js & Redux",
-        description:
-          "This project is an e-commerce app built with React.js & used dummy data to mimic the server, and using Redux for state management and Local Storage for data persistence.",
-        buttonOneTitle: "Can you afford it ?",
-        buttonTwoTitle: "It's not cheap",
-        buttonOne: {
-          title: "Can you afford it ?",
-          svg: svgs.rightArrow
-        },
-        buttonTwo: {
-          title: "Check out",
-          svg: svgs.rightArrow
-        },
-        onclick: "open",
-        src: "./pages/reactRedux/reactRedux.html",
-      },
-    ],
-    buttonOne: {
-      title: "It's Reactive !",
-      svg: svgs.react,
-    },
-    buttonTwo: {
-      title: "Let's see",
-      svg: svgs.rightArrow,
-    },
-    onclick: "dialog",
-  },
+  // "React.js Projects!": {
+  //   type: "group",
+  //   title: "React.js Projects !",
+  //   description:
+  //     "React.js projects are designed with React Redux for robust state management and utilize local storage for data persistence, resulting in a highly responsive and efficient user experience.",
+  //   cards: [
+  //     {
+  //       title: "E-Commerce Store with React.js & Redux",
+  //       description:
+  //         "This project is an e-commerce app built with React.js & used dummy data to mimic the server, and using Redux for state management and Local Storage for data persistence.",
+  //       buttonOneTitle: "Can you afford it ?",
+  //       buttonTwoTitle: "It's not cheap",
+  //       buttonOne: {
+  //         title: "Can you afford it ?",
+  //         svg: svgs.rightArrow
+  //       },
+  //       buttonTwo: {
+  //         title: "Check out",
+  //         svg: svgs.rightArrow
+  //       },
+  //       onclick: "open",
+  //       src: "./pages/reactRedux/reactRedux.html",
+  //     },
+  //   ],
+  //   buttonOne: {
+  //     title: "It's Reactive !",
+  //     svg: svgs.react,
+  //   },
+  //   buttonTwo: {
+  //     title: "Let's see",
+  //     svg: svgs.rightArrow,
+  //   },
+  //   onclick: "dialog",
+  // },
   "Css Designs": {
     type: "group",
     title: "Css Designs",
