@@ -151,7 +151,7 @@ const cards = {
     type: "card",
     title: "File Sharing App",
     description:
-      "A file-sharing app created using Electron.js for the owner and a web interface for clients, allowing file transfers, video playback, and image viewing over a local network. Only for Windows",
+      "A file-sharing app created using Electron.js for the host and a web interface for clients using react.js, allowing file transfers, video playback, and image viewing over a local network. Only for Windows",
     buttonOne: {
       title: "Retrieve",
       svg: svgs.download,
