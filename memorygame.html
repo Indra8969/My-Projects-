@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 100%;
+            min-height: 100dvh;
+            display: flex;
+        }
+
+        .container {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            border: 1px solid black;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="game">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+        const $a = selector => document.querySelectorAll(selector);
+
+        class Game {
+            constructor() {
+                this.memory = [];
+                this.init();
+            }
+            getRandomPair() {
+                const rand = Math.floor(Math.random() * 100);
+                if (this.memory.includes(rand)) {
+                    return this.getRandomPair();
+                }
+                return [rand, rand];
+            }
+            swap(x, y) {
+                let temp = this.memory[x];
+                this.memory[x] = this.memory[y];
+                this.memory[y] = temp;
+            }
+            shuffel() {
+                let i = 0;
+                while (i < 20) {
+                    const randIndexOne = Math.floor(Math.random() * this.memory.length)
+                    const randIndexTwo = Math.floor(Math.random() * this.memory.length)
+                    this.swap(randIndexOne, randIndexTwo);
+                    i++;
+                }
+            }
+            init() {
+                let puttedCount = 0;
+                while (puttedCount < 18) {
+                    const randPair = this.getRandomPair();
+                    this.memory = [...this.memory, ...randPair];
+                    puttedCount++;
+                }
+                this.shuffel();
+            }
+        }
+
+        const eraseGame = () => {
+            const cards = $a(".card");
+            cards.forEach((card) => {
+                card.innerText = ""
+            });
+        }
+
+        const showGame = (memory) => {
+            return new Promise((res, rej) => {
+                console.log("memory", memory)
+                const cards = $a(".card");
+                cards.forEach((card, index) => {
+                    card.innerText = memory[index];
+                });
+                setTimeout(() => {
+                    eraseGame();
+                    res();
+                }, 10000);
+            })
+        }
+
+        const createBoard = () => {
+            const gameBoard = $(".game");
+            for (let i = 0; i < 36; i++) {
+                let card = document.createElement("div");
+                card.classList.add("card", "notdone");
+                gameBoard.appendChild(card);
+            }
+        }
+
+        const getRandomColor = () => {
+            const randone = Math.floor(Math.random() * 255);
+            const randtwo = Math.floor(Math.random() * 255);
+            const randthree = Math.floor(Math.random() * 255);
+            return `rgb(${randone},${randtwo},${randthree})`;
+        }
+
+        const startGame = (memory) => {
+            const cards = $a(".card.notdone");
+            let openedCard = null;
+            let timeoutset = false;
+            console.log(cards);
+            const handleClick = (card, index) => {
+                if(timeoutset) return;
+                card.innerText = memory[index];
+                if (openedCard) {
+                    if (memory[openedCard.index] === memory[index]) {
+                        timeoutset = false;
+                        const randomclr = getRandomColor();
+                        card.style.backgroundColor = randomclr;
+                        openedCard.card.style.backgroundColor = randomclr;
+                        card.classList.add("done");
+                        openedCard.card.classList.add("done");
+                        openedCard = null;
+                        return;
+                    }
+                    console.log(openedCard.index, index)
+                    if (memory[openedCard.index] !== memory[index]) {
+                        console.log("not same")
+                        timeoutset = true;
+                        setTimeout(() => {
+                            openedCard.card.innerText = "";
+                            card.innerText = "";
+                            openedCard = null;
+                            timeoutset = false;
+                        }, 2000);
+                    }
+                }
+                if (!openedCard) {
+                    console.log("set new opened card");
+                    openedCard = { card, index }
+                    console.log(openedCard)
+                    card.innerText = memory[index]
+                }
+            }
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].onclick = () => handleClick(cards[i], i);
+            }
+        }
+
+        const startNewGame = async () => {
+            createBoard();
+            const game = new Game();
+            await showGame(game.memory);
+            startGame(game.memory);
+        }
+
+        startNewGame();
+    </script>
+</body>
+
+</html>
